@@ -3,22 +3,22 @@
   <img src="./.github/lobinho.gif" width="px">
    <br><br>
   <samp>
-    👋 Hi there! I'm a Web Developer
+    👋 Olá, Eu sou um Desenvolvedor Web
   </samp>
-  <p align="center"><a href="./README.pt-br.md">In Portuguese ➤</a></p>
+  <p align="center"><a href="./README.md">Em Inglês ➤</a></p>
   
 </p>
 
 <!-- ABOUT OF ME -->
 <p align="center">
 <div style="width: 500px; text-align: justify; margin: 0 auto;">
-Hi dear, my name is Miguel Riquelme and I'm actualy 18 years old, work on EVVE Comunicações developing websites, apps and some systems. I'm studying <a href="https://nodejs.org/en/">NodeJS</a>, <a href="https://pt-br.reactjs.org/">ReactJS</a>, <a href="https://reactnative.dev/">React Native</a> and last but not least <a href="https://www.typescriptlang.org/">Typescript</a> 
+Olá, meu nome é Miguel Riquelme e atualmente tenho 18 anos, trabalho na EVVE Comunicações desenvolvendo sites, apps e alguns sistemas. Eu estou estudando <a href="https://nodejs.org/en/">NodeJS</a>, <a href="https://pt-br.reactjs.org/">ReactJS</a>, <a href="https://reactnative.dev/">React Native</a> e por último, mas não menos importante <a href="https://www.typescriptlang.org/">Typescript</a> 
 </div>
 </p>
 <!-- QUOTE -->
 <br>
 <p align="center">
-"May your work be perfect so that, even after your death, it remains."
+"Que seu trabalho seja perfeito para que, mesmo depois de sua morte, permaneça."
 <br>
 ― Leonardo da Vinci
 </p>
