@@ -12,7 +12,7 @@
 <!-- ABOUT OF ME -->
 <p align="center">
 <div style="width: 500px; text-align: justify; margin: 0 auto;">
-Hi dear, my name is Miguel Riquelme and I'm actualy 18 years old, work on EVVE Comunicações developing websites, apps and some systems. I'm studying <a href="https://nodejs.org/en/">NodeJS</a>, <a href="https://pt-br.reactjs.org/">ReactJS</a>, <a href="https://reactnative.dev/">React Native</a> and last but not least <a href="https://www.typescriptlang.org/">Typescript</a> 
+Hi dear, my name is Miguel Riquelme and I'm actualy 18 years old,<br> work on EVVE Comunicações developing websites, apps and some<br> systems. I'm studying <a href="https://nodejs.org/en/">NodeJS</a>, <a href="https://pt-br.reactjs.org/">ReactJS</a>, <a href="https://reactnative.dev/">React Native</a> and last<br> but not least <a href="https://www.typescriptlang.org/">Typescript</a> 
 </div>
 </p>
 <!-- QUOTE -->
