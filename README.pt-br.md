@@ -12,7 +12,7 @@
 <!-- ABOUT OF ME -->
 <p align="center">
 <div style="width: 500px; text-align: justify; margin: 0 auto;">
-Olá, meu nome é Miguel Riquelme e atualmente tenho 18 anos, trabalho na EVVE Comunicações desenvolvendo sites, apps e alguns sistemas. Eu estou estudando <a href="https://nodejs.org/en/">NodeJS</a>, <a href="https://pt-br.reactjs.org/">ReactJS</a>, <a href="https://reactnative.dev/">React Native</a> e por último, mas não menos importante <a href="https://www.typescriptlang.org/">Typescript</a> 
+Olá, meu nome é Miguel Riquelme e atualmente tenho 18 anos,<br> trabalho na EVVE Comunicações desenvolvendo sites, apps e alguns<br> sistemas. Eu estou estudando <a href="https://nodejs.org/en/">NodeJS</a>, <a href="https://pt-br.reactjs.org/">ReactJS</a>, <a href="https://reactnative.dev/">React Native</a> e por último,<br> mas não menos importante <a href="https://www.typescriptlang.org/">Typescript</a> 
 </div>
 </p>
 <!-- QUOTE -->
