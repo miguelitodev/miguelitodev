@@ -11,7 +11,7 @@
 
 <!-- ABOUT OF ME -->
 <p align="center" style="text-align: center;">
-Olá, meu nome é Miguel Riquelme e atualmente tenho 18 anos,<br> trabalho na <a href="https://www.facebook.com/EvveComunicacao">EVVE Comunicações</a> desenvolvendo sites, apps e alguns<br> sistemas. Eu estou estudando <a href="https://nodejs.org/en/">NodeJS</a>, <a href="https://pt-br.reactjs.org/">ReactJS</a>, <a href="https://reactnative.dev/">React Native</a> e por último,<br> mas não menos importante <a href="https://www.typescriptlang.org/">Typescript</a> 
+Olá, meu nome é Miguel Riquelme e atualmente tenho 18 anos,<br> . Eu estou estudando <a href="https://nodejs.org/en/">NodeJS</a>, <a href="https://pt-br.reactjs.org/">ReactJS</a>, <a href="https://reactnative.dev/">React Native</a> e por último,<br> mas não menos importante <a href="https://www.typescriptlang.org/">Typescript</a> 
 </p>
 
 <!-- QUOTE -->
@@ -25,12 +25,6 @@ Olá, meu nome é Miguel Riquelme e atualmente tenho 18 anos,<br> trabalho na <a
 
 <!-- SOCIAL MEDIAS -->
 <p align="center">
-<img src="https://devicons.github.io/devicon/devicon.git/icons/react/react-original-wordmark.svg" alt="react" width="20" height="20"/>
-<img src="https://devicons.github.io/devicon/devicon.git/icons/css3/css3-original-wordmark.svg" alt="css3"  width="20" height="20"/>
-<img src="https://devicons.github.io/devicon/devicon.git/icons/html5/html5-original-wordmark.svg" alt="html5"  width="20" height="20"/>
-<img src="https://devicons.github.io/devicon/devicon.git/icons/javascript/javascript-original.svg" alt="javascript" width="20" height="20"/>
-<img src="https://devicon.dev/devicon.git/icons/typescript/typescript-original.svg" alt="typescript" width="20" height="20"/> 
-<img src="https://devicons.github.io/devicon/devicon.git/icons/nodejs/nodejs-original.svg" alt="nodejs" width="20" height="20"/></p><p align="center">
 <img src="https://github-readme-stats.vercel.app/api?username=miguelrisquelme&show_icons=true" alt="miguelrisquelme"/>
 </p>
 
