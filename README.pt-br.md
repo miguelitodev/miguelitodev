@@ -11,7 +11,7 @@
 
 <!-- ABOUT OF ME -->
 <p align="center" style="text-align: center;">
-Olá, meu nome é Miguel Riquelme e atualmente tenho 18 anos.<br> Eu estou estudando <a href="https://nodejs.org/en/">NodeJS</a>, <a href="https://pt-br.reactjs.org/">ReactJS</a>, <a href="https://reactnative.dev/">React Native</a> e por último,<br> mas não menos importante <a href="https://www.typescriptlang.org/">Typescript</a> 
+Olá, meu nome é Miguel Riquelme e atualmente tenho 18 anos.<br> Eu trabalho com <a href="https://pt-br.reactjs.org/">ReactJS</a>/<a href="https://nextjs.org/">Next.JS</a> e eu sou um entusiasta no ecossistema JS.
 </p>
 
 <!-- QUOTE -->
