@@ -1,6 +1,6 @@
 <!-- HEADER -->
 <p align="center">
-  <img src="./.github/lobinho.gif" width="px">
+  <img src="https://media1.giphy.com/media/l1IBiCSkcSjBntAs0/giphy.gif?cid=ecf05e47txxt60remkwmgmy1b0kp2dchzuq2dnq6uyd06qlu&rid=giphy.gif&ct=s">
    <br><br>
   <samp>
     👋 Olá, Eu sou um Desenvolvedor Web
