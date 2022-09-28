@@ -1,6 +1,6 @@
 <!-- HEADER -->
 <p align="center">
-  <img src="https://media.giphy.com/media/Ttozxmsw3F8XtsQg6q/giphy.gif" width="300px">
+  <img src="https://media.giphy.com/media/cVrccUf0NC1TQlLiZf/giphy.gif" width="300px">
    <br><br>
   <samp>
     👋 Olá, Eu sou um Desenvolvedor Web
