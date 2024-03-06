@@ -11,7 +11,7 @@
 
 <!-- ABOUT OF ME -->
 <p align="center" style="text-align: center;">
-Hi dear, my name is Miguel Riquelme and I'm currently 20 years old.<br> I work with <a href="https://pt-br.reactjs.org/">ReactJS</a>/<a href="https://nextjs.org/">Next.JS</a>  and I am an enthusiast in the JS ecosystem.
+Hi dear, my name is Miguel Riquelme and I'm currently 22 years old.<br> I work with <a href="https://pt-br.reactjs.org/">ReactJS</a>/<a href="https://nextjs.org/">Next.JS</a>  and I am an enthusiast in the JS ecosystem.
 </p>
 <!-- QUOTE -->
 <br>
