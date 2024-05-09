@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400;500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--tw-gradient-stops: #6366f1;
+	--tw-gradient-stops-1: #bfdbfe;
+	--tw-gradient-stops-2: #93c5fd;
+	--tw-gradient-stops-3: #f9a8d4;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Roboto", sans-serif;
+	box-sizing: border-box;
+}
+
+@keyframes slide {
+	100% {
+		top: -360px;
+	}
+}
+
+@keyframes typing {
+	40%,
+	60% {
+		left: calc(100% + 30px);
+	}
+	100% {
+		left: 0;
+	}
+}
+
+.animate-slide {
+	animation: slide 12s steps(4) infinite;
+}
+
+.dynamic-txts li span::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: #343f4f;
+	border-left: 2px solid #fc6d6d;
+	animation: typing 3s steps(10) infinite;
+}
