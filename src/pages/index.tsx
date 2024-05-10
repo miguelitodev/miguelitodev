@@ -1,14 +1,29 @@
+import { useEffect, useState } from "react";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
-import { ArrowRainbowDown } from "@icons";
-import { useState } from "react";
+
+import { Header } from "@/template";
+import { ArrowRainbowDown } from "@/assets/icons";
 
 export default function Home() {
 	const [opened, setOpened] = useState<boolean>(false);
 
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setOpened(true);
+		}, 10000);
+
+		return () => clearTimeout(timer);
+	}, []);
+
 	function Welcome() {
 		return (
-			<div className="flex justify-center flex-col items-center h-screen bg-gradient-to-br from-opacity-10 to-transparent backdrop-blur-2xl shadow-lg p-6">
+			<motion.div
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				exit={{ opacity: 0 }}
+				className="flex justify-center flex-col items-center h-screen bg-gradient-to-br from-opacity-10 to-transparent backdrop-blur-2xl shadow-lg p-6"
+			>
 				<div className="w-auto text-white font-bold">
 					<span className="font-mono text-sm md:text-md lg:text-xl">
 						Hi, my name is
@@ -37,7 +52,7 @@ export default function Home() {
 								]}
 								style={{ fontFamily: "Roboto mono" }}
 								wrapper="span"
-								speed={50}
+								speed={70}
 								repeat={Infinity}
 							/>
 						</span>
@@ -67,37 +82,15 @@ export default function Home() {
 						<ArrowRainbowDown />
 					</motion.button>
 				</motion.div>
-			</div>
+			</motion.div>
 		);
 	}
 
-	function Home() {
-		return (
-			<div className="flex flex-col items-center h-screen bg-gradient-to-br from-opacity-10 to-transparent backdrop-blur-2xl shadow-lg p-6">
-				<div className="w-1/2 p-4">
-					<header className="flex items-center justify-between">
-						<ul>
-							<li>
-								<span className="text-white font-mono font-bold text-lg">
-									Hi, welcome!
-								</span>
-							</li>
-						</ul>
+	if (!opened) return <Welcome />;
 
-						<motion.button
-							whileHover={{ scale: 1.1 }}
-							whileTap={{ scale: 0.9 }}
-							className="bg-gradient-to-r from-indigo-400 to-indigo-600 text-white font-bold py-2 px-4 rounded-lg shadow-lg hover:from-indigo-600 hover:to-indigo-800 transition duration-300 ease-in-out"
-						>
-							<span>Contact</span>
-						</motion.button>
-					</header>
-				</div>
-			</div>
-		);
-	}
-
-	if (opened) return <Home />;
-
-	return <Welcome />;
+	return (
+		<div className="h-screen bg-gradient-to-br from-opacity-10 to-transparent backdrop-blur-2xl shadow-lg p-6">
+			<Header />
+		</div>
+	);
 }

@@ -14,7 +14,6 @@
     "incremental": true,
     "paths": {
       "@/*": ["./src/*"],
-      "@icons": ["./src/assets/icons/index.ts"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
