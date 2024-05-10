@@ -1,9 +1,10 @@
-import { motion } from "framer-motion";
+import { motion, MotionProps } from "framer-motion";
 import React from "react";
 
 type ButtonFlashingProps = {
 	children: string | Node;
-} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+} & React.ButtonHTMLAttributes<HTMLButtonElement> &
+	MotionProps;
 
 /**
  * Props para o componente ButtonFlashing.
@@ -23,8 +24,8 @@ export const ButtonFlashing: React.FC<ButtonFlashingProps> = ({
 }: ButtonFlashingProps): JSX.Element => {
 	return (
 		<motion.button
-			initial={{ "--x": "100%", scale: 1 }}
-			animate={{ "--x": "-100%" }}
+			initial={{ "--x": "100%", scale: 1 } as any}
+			animate={{ "--x": "-100%" } as any}
 			whileTap={{ scale: 0.8 }}
 			transition={{
 				repeat: Infinity,

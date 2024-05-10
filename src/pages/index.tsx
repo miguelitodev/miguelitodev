@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
-
-import { Header } from "@/template";
+import { ButtonFlashing } from "@/components";
 import { ArrowRainbowDown } from "@/assets/icons";
+import { socialMedias } from "@/data";
+import Link from "next/link";
 
 export default function Home() {
 	const [opened, setOpened] = useState<boolean>(false);
+	const [contactOpen, setContactOpen] = useState<boolean>(false);
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
@@ -90,7 +92,92 @@ export default function Home() {
 
 	return (
 		<div className="h-screen bg-gradient-to-br from-opacity-10 to-transparent backdrop-blur-2xl shadow-lg p-6">
-			<Header />
+			<motion.div
+				initial={{ top: 300, opacity: 0 }}
+				animate={{ top: 0, opacity: 1 }}
+				exit={{ top: -300, opacity: 0 }}
+				className="relative flex flex-col items-center"
+			>
+				<div className="xl:w-1/2 w-full p-4 m-auto">
+					<header className="w-full flex items-center justify-between">
+						<ul>
+							<li>
+								<span className="text-white font-mono font-bold text-lg">
+									Hi, welcome!
+								</span>
+							</li>
+						</ul>
+
+						<ButtonFlashing
+							onClick={() => {
+								setContactOpen((prevState) => !prevState);
+							}}
+						>
+							Contact me
+						</ButtonFlashing>
+					</header>
+				</div>
+
+				{contactOpen && (
+					<motion.div
+						key="contact"
+						initial={{ opacity: 0, y: 50 }}
+						animate={{ opacity: 1, y: 0 }}
+						exit={{ opacity: 0, y: -50 }}
+						transition={{ duration: 0.5 }}
+						className="w-1/2 m-auto p-4"
+					>
+						<ul className="flex flex-row gap-5 flex-wrap">
+							{socialMedias.map((socialMedia, index) => (
+								<motion.li
+									layout
+									key={index}
+									initial={{ opacity: 0, y: 50 }}
+									animate={{ opacity: 1, y: 0 }}
+									exit={{ opacity: 0, y: -50 }}
+									transition={{ duration: 0.5, delay: index * 0.2 }}
+								>
+									<Link
+										href={socialMedia.link}
+										passHref
+										rel="noopener noreferrer"
+										target="_blank"
+									>
+										<motion.button
+											key={socialMedia.id}
+											exit={{ opacity: 0, y: -50 }}
+											initial={{ "--x": "100%", scale: 1 } as any}
+											animate={{ "--x": "-100%" } as any}
+											whileTap={{ scale: 0.7 }}
+											transition={{
+												repeat: Infinity,
+												repeatType: "loop",
+												repeatDelay: 1,
+												type: "spring",
+												stiffness: 20,
+												damping: 15,
+												mass: 2,
+												scale: {
+													type: "spring",
+													stiffness: 10,
+													damping: 5,
+													mass: 0.1,
+												},
+											}}
+											className="relative radial-gradient p-5 rounded-md"
+										>
+											<span className="text-neutral-100 tracking-wide font-light h-full w-full block relative linear-mask">
+												{socialMedia.name}
+											</span>
+											<span className="block absolute inset-0 rounded-md p-px linear-overlay" />
+										</motion.button>
+									</Link>
+								</motion.li>
+							))}
+						</ul>
+					</motion.div>
+				)}
+			</motion.div>
 		</div>
 	);
 }
