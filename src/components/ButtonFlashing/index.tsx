@@ -2,7 +2,7 @@ import { motion, MotionProps } from "framer-motion";
 import React from "react";
 
 type ButtonFlashingProps = {
-	children: string | Node;
+	children: string | React.ReactNode;
 } & React.ButtonHTMLAttributes<HTMLButtonElement> &
 	MotionProps;
 

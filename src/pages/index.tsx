@@ -5,12 +5,48 @@ import { ButtonFlashing } from "@/components";
 import { ArrowRainbowDown } from "@/assets/icons";
 import { socialMedias } from "@/data";
 import Link from "next/link";
+import { format } from "date-fns";
+import axios from "axios";
+import { stringify } from "querystring";
+
+type GeolocationCoordinates = {
+	latitude: number;
+	longitude: number;
+	altitude: number | null;
+	accuracy: number;
+	altitudeAccuracy: number | null;
+	heading: number | null;
+	speed: number | null;
+};
+
+type GeolocationPosition = {
+	coords: GeolocationCoordinates;
+	timestamp: number;
+};
 
 export default function Home() {
 	const [opened, setOpened] = useState<boolean>(false);
 	const [contactOpen, setContactOpen] = useState<boolean>(false);
+	const [location, setLocation] = useState({ tz_id: "", text: "" });
 
 	useEffect(() => {
+		navigator.geolocation.getCurrentPosition(
+			({ coords }: GeolocationPosition) => {
+				axios
+					.get(
+						`https://api.weatherapi.com/v1/current.json?key=bfe238425d0c4630918223040241005&q=${coords?.latitude},${coords?.longitude}&aqi=no`
+					)
+					.then(({ data }) => {
+						console.log(data);
+
+						setLocation({
+							tz_id: data.tz_id,
+							text: `${data.location.name}, ${data.location.region} - ${data.current.temp_c}°C / ${data.current.temp_f}°F`,
+						});
+					});
+			}
+		);
+
 		const timer = setTimeout(() => {
 			setOpened(true);
 		}, 10000);
@@ -103,17 +139,39 @@ export default function Home() {
 						<ul>
 							<li>
 								<span className="text-white font-mono font-bold text-lg">
-									Hi, welcome!
+									<TypeAnimation
+										sequence={[
+											"Hi, welcome!",
+											1000,
+											"",
+											"Today is " + format(new Date(), "EEEE, do"),
+											1000,
+											"",
+											1000,
+											"",
+											location?.text,
+											1000,
+											"",
+											"5y working with Frontend O.O",
+											1000,
+											"",
+											`Now is ${format(new Date().getTime(), "HH:mm")}`,
+											1000,
+										]}
+										style={{ fontFamily: "Roboto mono" }}
+										wrapper="span"
+										speed={30}
+										repeat={Infinity}
+									/>
 								</span>
 							</li>
 						</ul>
-
 						<ButtonFlashing
 							onClick={() => {
 								setContactOpen((prevState) => !prevState);
 							}}
 						>
-							Contact me
+							{contactOpen ? "Close" : "Contact me"}
 						</ButtonFlashing>
 					</header>
 				</div>
@@ -150,6 +208,7 @@ export default function Home() {
 											animate={{ "--x": "-100%" } as any}
 											whileTap={{ scale: 0.7 }}
 											transition={{
+												delay: index * 0.335,
 												repeat: Infinity,
 												repeatType: "loop",
 												repeatDelay: 1,
