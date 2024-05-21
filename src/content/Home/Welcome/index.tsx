@@ -12,7 +12,7 @@ export function Welcome({ setOpened }: TypeWelcome) {
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
 			exit={{ opacity: 0 }}
-			className="flex justify-center flex-col items-center h-screen bg-gradient-to-br from-opacity-10 to-transparent backdrop-blur-2xl shadow-lg p-6"
+			className="flex justify-center flex-col items-center min-h-screen bg-gradient-to-br from-opacity-10 to-transparent backdrop-blur-2xl shadow-lg p-6"
 		>
 			<div className="w-auto text-white font-bold">
 				<span className="font-mono text-sm md:text-md lg:text-xl">

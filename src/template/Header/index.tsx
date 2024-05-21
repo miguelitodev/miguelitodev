@@ -17,13 +17,13 @@ export function Header() {
 			initial={{ top: 300, opacity: 0 }}
 			animate={{ top: 0, opacity: 1 }}
 			exit={{ top: -300, opacity: 0 }}
-			className="w-full relative flex flex-col items-center"
+			className="w-full relative flex flex-col items-center mb-20"
 		>
-			<div className="xl:w-1/2 w-full p-4 m-auto">
-				<header className="w-full flex items-center justify-between">
+			<div className="2xl:w-1/2 w-full p-0 sm:p-4 m-auto">
+				<header className="w-full flex items-center justify-between ">
 					<ul>
 						<li>
-							<span className="text-white font-mono font-bold text-lg">
+							<span className="text-white font-mono font-bold text-sm fixed">
 								<TypeAnimation
 									sequence={[
 										"Hi, welcome!",
@@ -55,6 +55,7 @@ export function Header() {
 						onClick={() => {
 							setContactOpen((prevState) => !prevState);
 						}}
+						className="hidden sm:block"
 					>
 						{contactOpen ? "Close" : "Contact me"}
 					</ButtonFlashing>

@@ -34,7 +34,7 @@ export default function HomePage({ location }: TypeHomePage) {
 
 	return (
 		<Page>
-			<div className="w-1/2 flex flex-col gap-4">
+			<div className="w-full sm:w-1/2 flex flex-col gap-4">
 				<h1 className="text-white font-bold text-5xl">Hello</h1>
 				<p className="text-white font-extralight">
 					Welcome to my world. I would like to present to you my inner self, all
