@@ -1,0 +1,1 @@
+export { fetchLocationData } from "./useFetchLocation";

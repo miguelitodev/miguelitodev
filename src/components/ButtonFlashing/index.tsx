@@ -3,6 +3,7 @@ import React from "react";
 
 type ButtonFlashingProps = {
 	children: string | React.ReactNode;
+	className?: string;
 } & React.ButtonHTMLAttributes<HTMLButtonElement> &
 	MotionProps;
 
@@ -20,6 +21,7 @@ type ButtonFlashingProps = {
  */
 export const ButtonFlashing: React.FC<ButtonFlashingProps> = ({
 	children,
+	className,
 	...rest
 }: ButtonFlashingProps): JSX.Element => {
 	return (
@@ -43,7 +45,7 @@ export const ButtonFlashing: React.FC<ButtonFlashingProps> = ({
 				},
 			}}
 			{...rest}
-			className="px-6 py-2 rounded-md relative radial-gradient border"
+			className={`px-6 py-2 rounded-md relative radial-gradient border ${className}`}
 		>
 			<span className="text-neutral-100 tracking-wide font-light h-full w-full block relative linear-mask">
 				{children}
