@@ -1,18 +1,16 @@
-import { ButtonFlashing } from "@/components";
-import { socialMedias } from "@/data";
+import Link from "next/link";
 import { format } from "date-fns";
 import { motion } from "framer-motion";
-import Link from "next/link";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { TypeAnimation } from "react-type-animation";
+
+import { ButtonFlashing } from "@/components";
+import { LocationContext } from "@/context";
+import { socialMedias } from "@/data";
 
 export function Header() {
 	const [contactOpen, setContactOpen] = useState<boolean>(false);
-	const [location, setLocation] = useState({
-		tz_id: "",
-		text: "",
-		country: "",
-	});
+	const { text } = useContext(LocationContext);
 
 	return (
 		<motion.div
@@ -36,7 +34,7 @@ export function Header() {
 										"",
 										1000,
 										"",
-										location?.text,
+										text,
 										1000,
 										"",
 										"5y working with Frontend O.O",

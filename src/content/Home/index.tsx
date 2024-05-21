@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/solid";
 
@@ -6,14 +6,21 @@ import { ButtonFlashing } from "@/components";
 
 import { Welcome } from "./Welcome";
 import { Page } from "@/template";
+import { LocationContext } from "@/context";
 
-type TypeHome = {
+type TypeHomePage = {
 	location: { country: string; tz_id: string; text: string };
 };
 
-export default function Home({ location }: TypeHome) {
+export default function HomePage({ location }: TypeHomePage) {
 	const [isOpen, setIsOpen] = useState<boolean>(false);
 	const [opened, setOpened] = useState<boolean>(false);
+
+	const { setDataLocation } = useContext(LocationContext);
+
+	useEffect(() => {
+		setDataLocation(location);
+	}, [setDataLocation, location]);
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
