@@ -60,16 +60,6 @@ export const socialMedias = [
 		link: "https://www.facebook.com/miguelrisquelme/",
 	},
 	{
-		id: "whatsapp",
-		name: "WhatsApp",
-		link: "https://wa.me/+5511977976049",
-	},
-	{
-		id: "telegram",
-		name: "Telegram",
-		link: "https://t.me/miguelitodev",
-	},
-	{
 		id: "email",
 		name: "E-mail",
 		link: "mailto:miguelrisquelme@gmail.com",
