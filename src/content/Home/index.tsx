@@ -65,16 +65,12 @@ export default function HomePage({ location }: TypeHomePage) {
 						improving my English and continuing to study technology so that one
 						day I can achieve this dream through my hard work.
 					</p>
-					<div className="flex justify-end item-center">
-						<a
-							href={`pdfs/${
-								location.country === "Brazil"
-									? "curriculum-ptBR.pdf"
-									: "curriculum-enUS.pdf"
-							}`}
-							download
-						>
-							<ButtonFlashing>Curriculum</ButtonFlashing>
+					<div className="flex justify-end item-center gap-4">
+						<a href="pdfs/curriculum-ptBR.pdf" download>
+							<ButtonFlashing>Curriculum pt-BR</ButtonFlashing>
+						</a>
+						<a href="pdfs/curriculum-enUS.pdf" download>
+							<ButtonFlashing>Curriculum en-US</ButtonFlashing>
 						</a>
 					</div>
 				</motion.div>
