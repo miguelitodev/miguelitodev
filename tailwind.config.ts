@@ -25,6 +25,9 @@ const config: Config = {
 					to: { "background-position": "200% center" },
 				},
 			},
+			fontFamily: {
+				merriweather: ["Merriweather", "serif"],
+			},
 		},
 	},
 	plugins: [],

@@ -19,7 +19,7 @@ export function Header() {
 			exit={{ top: -300, opacity: 0 }}
 			className="w-full relative flex flex-col items-center mb-20"
 		>
-			<div className="2xl:w-1/2 w-full p-0 sm:p-4 m-auto">
+			<div className="w-full p-0 sm:p-4 m-auto">
 				<header className="w-full flex items-center justify-between ">
 					<ul>
 						<li>
@@ -55,7 +55,7 @@ export function Header() {
 						onClick={() => {
 							setContactOpen((prevState) => !prevState);
 						}}
-						className="hidden sm:block"
+						className="hidden sm:block p-0"
 					>
 						{contactOpen ? "Close" : "Contact me"}
 					</ButtonFlashing>
@@ -69,9 +69,9 @@ export function Header() {
 					animate={{ opacity: 1, y: 0 }}
 					exit={{ opacity: 0, y: -50 }}
 					transition={{ duration: 0.5 }}
-					className="w-1/2 m-auto p-4"
+					className="absolute top-full -translate-x-1/2 w-1/2 p-4 bg-opacity-80 rounded-lg"
 				>
-					<ul className="flex flex-row gap-5 flex-wrap">
+					<ul className="flex flex-row gap-5 flex-wrap justify-center">
 						{socialMedias.map((socialMedia, index) => (
 							<motion.li
 								layout
@@ -109,7 +109,7 @@ export function Header() {
 												mass: 0.1,
 											},
 										}}
-										className="relative radial-gradient p-5 rounded-md"
+										className="relative radial-gradient p-2 rounded-md"
 									>
 										<span className="text-neutral-100 tracking-wide font-light h-full w-full block relative linear-mask">
 											{socialMedia.name}
