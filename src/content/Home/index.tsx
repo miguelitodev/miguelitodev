@@ -1,25 +1,14 @@
 import { useContext, useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { ChevronRightIcon } from "@heroicons/react/24/solid";
-import Link from "next/link"; // Importando o componente Link
 
 import { Welcome } from "./Welcome";
 import { Page } from "@/template";
 import { LocationContext } from "@/context";
+import { Sidemenu } from "@/components";
 
 // Removido o ButtonFlashing, pois não está sendo utilizado no código
 
 type TypeHomePage = {
 	location: { country: string; tz_id: string; text: string };
-};
-
-const initial: { [key: string]: string | number } = {
-	"--x": "100%",
-	scale: 1,
-};
-
-const animate: { [key: string]: string | number } = {
-	"--x": "-100%",
 };
 
 export default function HomePage({ location }: TypeHomePage) {
@@ -55,97 +44,7 @@ export default function HomePage({ location }: TypeHomePage) {
 					</p>
 				</div>
 				<div>
-					{/* eslint-disable @typescript-eslint/ban-ts-comment */}
-					<ul className="space-y-4 flex flex-col items-end">
-						<motion.li
-							initial={initial}
-							animate={animate}
-							transition={{
-								repeat: Infinity,
-								repeatType: "loop",
-								repeatDelay: 1,
-								type: "spring",
-								stiffness: 20,
-								damping: 15,
-								mass: 2,
-								scale: {
-									type: "spring",
-									stiffness: 10,
-									damping: 5,
-									mass: 0.1,
-								},
-							}}
-							className="relative"
-						>
-							<Link
-								href="/projetos"
-								passHref
-								className="text-neutral-100 tracking-wide font-light relative linear-mask font-merriweather text-lg"
-							>
-								Projetos
-							</Link>
-							<ChevronRightIcon className="h-5 w-5 text-neutral-100 inline-block ml-2" />
-						</motion.li>
-						<motion.li
-							initial={initial}
-							animate={animate}
-							transition={{
-								repeat: Infinity,
-								repeatType: "loop",
-								repeatDelay: 1,
-								type: "spring",
-								stiffness: 20,
-								damping: 15,
-								mass: 2,
-								scale: {
-									type: "spring",
-									stiffness: 10,
-									damping: 5,
-									mass: 0.1,
-								},
-							}}
-							className="relative"
-						>
-							<Link
-								href="/experiencias"
-								passHref
-								className="text-neutral-100 tracking-wide font-light relative linear-mask font-merriweather text-lg"
-							>
-								Experiências
-							</Link>
-							<ChevronRightIcon className="h-5 w-5 text-neutral-100 inline-block ml-2" />
-						</motion.li>
-						<motion.li
-							initial={initial}
-							animate={animate}
-							transition={{
-								repeat: Infinity,
-								repeatType: "loop",
-								repeatDelay: 1,
-								type: "spring",
-								stiffness: 20,
-								damping: 15,
-								mass: 2,
-								scale: {
-									type: "spring",
-									stiffness: 10,
-									damping: 5,
-									mass: 0.1,
-								},
-							}}
-							className="relative"
-						>
-							<Link
-								href="/tecnologias"
-								passHref
-								className="text-neutral-100 tracking-wide font-light relative linear-mask font-merriweather text-lg"
-							>
-								Tecnologias
-							</Link>
-							<ChevronRightIcon className="h-5 w-5 text-neutral-100 inline-block ml-2" />
-						</motion.li>
-					</ul>
-					{/* eslint-disable @typescript-eslint/ban-ts-comment */}
+					<Sidemenu />
 				</div>
 			</div>
 		</Page>
