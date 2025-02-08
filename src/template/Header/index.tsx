@@ -90,8 +90,8 @@ export function Header() {
 									<motion.button
 										key={socialMedia.id}
 										exit={{ opacity: 0, y: -50 }}
-										initial={{ "--x": "100%", scale: 1 } as any}
-										animate={{ "--x": "-100%" } as any}
+										initial={{ "--x": "100%", scale: 1 }}
+										animate={{ "--x": "-100%" }}
 										whileTap={{ scale: 0.7 }}
 										transition={{
 											delay: index * 0.335,

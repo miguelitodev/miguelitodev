@@ -3,17 +3,26 @@ import { motion } from "framer-motion";
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import Link from "next/link"; // Importando o componente Link
 
-import { ButtonFlashing } from "@/components";
 import { Welcome } from "./Welcome";
 import { Page } from "@/template";
 import { LocationContext } from "@/context";
+
+// Removido o ButtonFlashing, pois não está sendo utilizado no código
 
 type TypeHomePage = {
 	location: { country: string; tz_id: string; text: string };
 };
 
+const initial: { [key: string]: string | number } = {
+	"--x": "100%",
+	scale: 1,
+};
+
+const animate: { [key: string]: string | number } = {
+	"--x": "-100%",
+};
+
 export default function HomePage({ location }: TypeHomePage) {
-	const [isOpen, setIsOpen] = useState<boolean>(false);
 	const [opened, setOpened] = useState<boolean>(false);
 
 	const { setDataLocation } = useContext(LocationContext);
@@ -37,7 +46,7 @@ export default function HomePage({ location }: TypeHomePage) {
 			<div className="w-full flex flex-row justify-between px-8">
 				<div className="w-3/5">
 					<h1 className="text-white text-5xl font-bold font-merriweather mb-8">
-						Hi, I'm Miguel Riquelme
+						Hi, I&apos;m Miguel Riquelme
 					</h1>
 					<p className="text-white font-light font-merriweather text-3xl leading-loose">
 						I develop user interfaces and enhance user experiences using web
@@ -46,10 +55,11 @@ export default function HomePage({ location }: TypeHomePage) {
 					</p>
 				</div>
 				<div>
+					{/* eslint-disable @typescript-eslint/ban-ts-comment */}
 					<ul className="space-y-4 flex flex-col items-end">
 						<motion.li
-							initial={{ "--x": "100%", scale: 1 } as any}
-							animate={{ "--x": "-100%" } as any}
+							initial={initial}
+							animate={animate}
 							transition={{
 								repeat: Infinity,
 								repeatType: "loop",
@@ -77,8 +87,8 @@ export default function HomePage({ location }: TypeHomePage) {
 							<ChevronRightIcon className="h-5 w-5 text-neutral-100 inline-block ml-2" />
 						</motion.li>
 						<motion.li
-							initial={{ "--x": "100%", scale: 1 } as any}
-							animate={{ "--x": "-100%" } as any}
+							initial={initial}
+							animate={animate}
 							transition={{
 								repeat: Infinity,
 								repeatType: "loop",
@@ -106,8 +116,8 @@ export default function HomePage({ location }: TypeHomePage) {
 							<ChevronRightIcon className="h-5 w-5 text-neutral-100 inline-block ml-2" />
 						</motion.li>
 						<motion.li
-							initial={{ "--x": "100%", scale: 1 } as any}
-							animate={{ "--x": "-100%" } as any}
+							initial={initial}
+							animate={animate}
 							transition={{
 								repeat: Infinity,
 								repeatType: "loop",
@@ -135,6 +145,7 @@ export default function HomePage({ location }: TypeHomePage) {
 							<ChevronRightIcon className="h-5 w-5 text-neutral-100 inline-block ml-2" />
 						</motion.li>
 					</ul>
+					{/* eslint-disable @typescript-eslint/ban-ts-comment */}
 				</div>
 			</div>
 		</Page>

@@ -13,6 +13,7 @@
   ],
   "plugins": ["@typescript-eslint"],
   "rules": {
-    // Adicione suas regras personalizadas aqui
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/ban-ts-comment": "off"  // Desabilita a regra sobre @ts-ignore e @ts-expect-error
   }
 }

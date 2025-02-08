@@ -1,4 +1,23 @@
-export async function fetchLocationData() {
+type LocationData = {
+	country: string;
+	tz_id: string;
+	text: string;
+};
+
+type WeatherAPIResponse = {
+	location: {
+		country: string;
+		tz_id: string;
+		name: string;
+		region: string;
+	};
+	current: {
+		temp_c: number;
+		temp_f: number;
+	};
+};
+
+export async function fetchLocationData(): Promise<LocationData> {
 	try {
 		const apiKey = process.env.WEATHER_API_KEY;
 		const response = await fetch(
@@ -9,7 +28,8 @@ export async function fetchLocationData() {
 			throw new Error("Failed to fetch location data");
 		}
 
-		const data = await response.json();
+		// Fazendo o cast explícito para o tipo WeatherAPIResponse
+		const data = (await response.json()) as WeatherAPIResponse;
 
 		return {
 			country: data.location.country,
@@ -18,6 +38,10 @@ export async function fetchLocationData() {
 		};
 	} catch (error) {
 		console.error(error);
-		return {};
+		return {
+			country: "",
+			tz_id: "",
+			text: "",
+		};
 	}
 }

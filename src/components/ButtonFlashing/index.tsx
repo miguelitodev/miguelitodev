@@ -7,6 +7,14 @@ type ButtonFlashingProps = {
 } & React.ButtonHTMLAttributes<HTMLButtonElement> &
 	MotionProps;
 
+const initial: { [key: string]: string | number } = {
+	"--x": "100%",
+	scale: 1,
+};
+
+const animate: { [key: string]: string | number } = {
+	"--x": "-100%",
+};
 /**
  * Props para o componente ButtonFlashing.
  * @typedef {Object} ButtonFlashingProps
@@ -26,8 +34,8 @@ export const ButtonFlashing: React.FC<ButtonFlashingProps> = ({
 }: ButtonFlashingProps): JSX.Element => {
 	return (
 		<motion.button
-			initial={{ "--x": "100%", scale: 1 } as any}
-			animate={{ "--x": "-100%" } as any}
+			initial={initial}
+			animate={animate}
 			whileTap={{ scale: 0.8 }}
 			transition={{
 				repeat: Infinity,
