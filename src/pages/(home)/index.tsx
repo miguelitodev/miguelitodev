@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 
-import { Welcome } from "./components/Welcome";
+import Welcome from "./components/Welcome";
 import { Page } from "@/template";
 import { LocationContext } from "@/context";
 

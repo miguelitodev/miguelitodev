@@ -6,7 +6,7 @@ type TypeWelcome = {
 	setOpened: (opened: boolean) => void;
 };
 
-export function Welcome({ setOpened }: TypeWelcome) {
+export default function Welcome({ setOpened }: TypeWelcome) {
 	return (
 		<motion.div
 			initial={{ opacity: 0 }}
