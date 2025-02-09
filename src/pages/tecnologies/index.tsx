@@ -87,8 +87,8 @@ export default function Tecnologies() {
 
 	return (
 		<Page>
-			<div className="flex justify-between px-8">
-				<div className="flex gap-4 flex-wrap w-4/5">
+			<div className="flex justify-between px-8 max-md:gap-8 max-lg:flex-col-reverse">
+				<div className="flex gap-4 flex-wrap w-4/5 max-md:w-full">
 					{sortedTechnologies.map((tech, index) => (
 						<ExperienceCard
 							key={index}

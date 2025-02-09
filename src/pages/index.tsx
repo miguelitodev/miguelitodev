@@ -1,4 +1,4 @@
-import HomePage from "@/content/Home";
+import HomePage from "./(home)/index";
 import { fetchLocationData } from "@/api";
 
 type TypeHome = {

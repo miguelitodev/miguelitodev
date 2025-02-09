@@ -1,6 +1,6 @@
 export function Footer() {
 	return (
-		<div className="text-white font-light text-xs mt-10 p-4 w-full flex justify-between items-center">
+		<div className="text-white font-light text-xs mt-10 p-4 w-full flex justify-between items-center max-md:flex-col max-md:gap-2">
 			<div>© 2025 Miguel Riquelme. All rights reserved.</div>
 
 			<div className="flex space-x-4">
