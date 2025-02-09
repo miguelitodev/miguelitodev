@@ -9,8 +9,8 @@ export const Sidemenu = () => {
 
 	const menuItems = [
 		{ label: "Home", href: "/", excludeFrom: "/" },
-		{ label: "Projetos", href: "/projetos" },
-		{ label: "Experiências", href: "/experiencias" },
+		{ label: "Projects", href: "/projects" },
+		{ label: "Experiences", href: "/experiences" },
 		{ label: "Tecnologies", href: "/tecnologies" },
 	];
 

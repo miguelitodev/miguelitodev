@@ -1,6 +1,5 @@
 import { Page } from "@/template";
-import ExperienceCard from "./components/ExperienceCard";
-import { Sidemenu } from "@/components";
+import TecnologyCard from "./components/TecnologyCard";
 
 const generateRandomColor = (): string => {
 	const letters = "0123456789ABCDEF";
@@ -87,20 +86,17 @@ export default function Tecnologies() {
 
 	return (
 		<Page>
-			<div className="flex justify-between px-8 max-md:gap-8 max-lg:flex-col-reverse">
-				<div className="flex gap-4 flex-wrap w-4/5 max-md:w-full">
-					{sortedTechnologies.map((tech, index) => (
-						<ExperienceCard
-							key={index}
-							experienceLevel={tech.experienceLevel}
-							years={tech.years}
-							technology={tech.technology}
-							url={tech.url}
-							gradient={generateRandomGradient()}
-						/>
-					))}
-				</div>
-				<Sidemenu />
+			<div className="flex gap-4 flex-wrap w-4/5 max-md:w-full">
+				{sortedTechnologies.map((tech, index) => (
+					<TecnologyCard
+						key={index}
+						experienceLevel={tech.experienceLevel}
+						years={tech.years}
+						technology={tech.technology}
+						url={tech.url}
+						gradient={generateRandomGradient()}
+					/>
+				))}
 			</div>
 		</Page>
 	);
