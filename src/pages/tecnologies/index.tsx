@@ -1,5 +1,5 @@
 import { Page } from "@/template";
-import ExperienceCard from "./components/ExperienceCard";
+import TecnologyCard from "./components/TecnologyCard";
 
 const generateRandomColor = (): string => {
 	const letters = "0123456789ABCDEF";
@@ -88,7 +88,7 @@ export default function Tecnologies() {
 		<Page>
 			<div className="flex gap-4 flex-wrap w-4/5 max-md:w-full">
 				{sortedTechnologies.map((tech, index) => (
-					<ExperienceCard
+					<TecnologyCard
 						key={index}
 						experienceLevel={tech.experienceLevel}
 						years={tech.years}

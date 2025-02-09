@@ -21,3 +21,20 @@
 }
 
 @import url("./button.css");
+
+.experienceSwiper {
+  width: 100%;
+  padding: 0px;
+}
+
+.swiper-slide {
+  width: 380px !important; /* Largura base dos cards */
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .swiper-slide {
+    width: 500px !important;
+  }
+
+}

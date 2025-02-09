@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-interface ExperienceCardProps {
+interface TecnologyCardProps {
 	technology: string;
 	years: string;
 	experienceLevel: number;
@@ -8,7 +8,7 @@ interface ExperienceCardProps {
 	gradient: string; // Gradiente
 }
 
-const ExperienceCard: React.FC<ExperienceCardProps> = ({
+const TecnologyCard: React.FC<TecnologyCardProps> = ({
 	technology,
 	years,
 	experienceLevel,
@@ -41,4 +41,4 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
 	);
 };
 
-export default ExperienceCard;
+export default TecnologyCard;
