@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-floating-promises */
+
 import { Page } from "@/template";
 import { useEffect, useState } from "react";
 import axios from "axios"; // Importando axios
