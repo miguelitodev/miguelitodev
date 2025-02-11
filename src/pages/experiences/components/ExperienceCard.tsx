@@ -16,10 +16,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
 	description,
 }) => {
 	return (
-		<motion.a
-			href="#"
-			target="_blank"
-			rel="noopener noreferrer"
+		<motion.div
 			className="relative p-6 max-md:p-0 overflow-hidden shadow-lg"
 			initial={{ scale: 1 }}
 			whileHover={{ scale: 1.05 }}
@@ -45,7 +42,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
 					{description}
 				</p>
 			</div>
-		</motion.a>
+		</motion.div>
 	);
 };
 

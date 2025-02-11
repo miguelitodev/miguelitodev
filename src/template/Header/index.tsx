@@ -1,7 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import { format } from "date-fns";
 import { motion } from "framer-motion";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { TypeAnimation } from "react-type-animation";
 
 import { ButtonFlashing } from "@/components";
@@ -12,12 +14,25 @@ export function Header() {
 	const [contactOpen, setContactOpen] = useState<boolean>(false);
 	const { text } = useContext(LocationContext);
 
+	// Efeito para desabilitar o scroll da página quando o menu estiver aberto
+	useEffect(() => {
+		if (contactOpen) {
+			document.body.style.overflow = "hidden"; // Desabilita o scroll
+		} else {
+			document.body.style.overflow = "auto"; // Restaura o scroll
+		}
+
+		return () => {
+			document.body.style.overflow = "auto"; // Restaura o scroll ao desmontar o componente
+		};
+	}, [contactOpen]);
+
 	return (
 		<motion.div
 			initial={{ top: 300, opacity: 0 }}
 			animate={{ top: 0, opacity: 1 }}
 			exit={{ top: -300, opacity: 0 }}
-			className="w-full relative flex flex-col items-center mb-32"
+			className="w-full relative flex flex-col items-center mb-32 max-md:mb-12"
 		>
 			<div className="w-full p-0 sm:p-4 m-auto">
 				<header className="w-full flex items-center justify-between ">
@@ -55,7 +70,7 @@ export function Header() {
 						onClick={() => {
 							setContactOpen((prevState) => !prevState);
 						}}
-						className="hidden sm:block p-0"
+						className="hidden sm:block p-0" // Botão visível no desktop
 					>
 						{contactOpen ? "Close" : "Contact me"}
 					</ButtonFlashing>
@@ -64,14 +79,23 @@ export function Header() {
 
 			{contactOpen && (
 				<motion.div
-					key="contact"
-					initial={{ opacity: 0, y: 50 }}
-					animate={{ opacity: 1, y: 0 }}
-					exit={{ opacity: 0, y: -50 }}
-					transition={{ duration: 0.5 }}
-					className="absolute top-full -translate-x-1/2 w-1/2 bg-opacity-80 rounded-lg"
+					className={`fixed z-10 right-0 w-64 bg-black text-white transition-transform ease-in-out transform ${
+						contactOpen ? "translate-x-0" : "translate-x-full"
+					}`}
+					style={{ minHeight: "calc(100% - 1.5rem)" }}
+					initial={{ opacity: 0, x: 300 }}
+					animate={{ opacity: 1, x: 0 }}
+					exit={{ opacity: 0, x: 300 }}
 				>
-					<ul className="flex flex-row gap-5 flex-wrap justify-center">
+					<div className="flex justify-end p-4">
+						<ButtonFlashing
+							onClick={() => setContactOpen(false)}
+							className="text-white"
+						>
+							Close
+						</ButtonFlashing>
+					</div>
+					<ul className="flex flex-col items-center justify-start gap-5 px-4">
 						{socialMedias.map((socialMedia, index) => (
 							<motion.li
 								layout
@@ -80,6 +104,7 @@ export function Header() {
 								animate={{ opacity: 1, y: 0 }}
 								exit={{ opacity: 0, y: -50 }}
 								transition={{ duration: 0.5, delay: index * 0.2 }}
+								className="w-full" // Make each item take full width
 							>
 								<Link
 									href={socialMedia.link}
@@ -109,7 +134,7 @@ export function Header() {
 												mass: 0.1,
 											},
 										}}
-										className="relative radial-gradient p-2 rounded-md"
+										className="relative radial-gradient w-full p-2 rounded-md"
 									>
 										<span className="text-neutral-100 tracking-wide font-light h-full w-full block relative linear-mask">
 											{socialMedia.name}
