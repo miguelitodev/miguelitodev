@@ -17,7 +17,7 @@ export function Header() {
 			initial={{ top: 300, opacity: 0 }}
 			animate={{ top: 0, opacity: 1 }}
 			exit={{ top: -300, opacity: 0 }}
-			className="w-full relative flex flex-col items-center mb-20"
+			className="w-full relative flex flex-col items-center mb-32"
 		>
 			<div className="w-full p-0 sm:p-4 m-auto">
 				<header className="w-full flex items-center justify-between ">
@@ -69,7 +69,7 @@ export function Header() {
 					animate={{ opacity: 1, y: 0 }}
 					exit={{ opacity: 0, y: -50 }}
 					transition={{ duration: 0.5 }}
-					className="absolute top-full -translate-x-1/2 w-1/2 p-4 bg-opacity-80 rounded-lg"
+					className="absolute top-full -translate-x-1/2 w-1/2 bg-opacity-80 rounded-lg"
 				>
 					<ul className="flex flex-row gap-5 flex-wrap justify-center">
 						{socialMedias.map((socialMedia, index) => (
