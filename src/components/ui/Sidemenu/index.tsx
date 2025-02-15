@@ -1,11 +1,12 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 
 export const Sidemenu = () => {
-	const router = useRouter();
-	const currentPath = router.pathname;
+	const currentPath = usePathname();
 
 	const menuItems = [
 		{ label: "Home", href: "/", excludeFrom: "/" },

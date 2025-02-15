@@ -1,11 +1,4 @@
-import { Page } from "@/template";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow } from "swiper/modules";
-import ExperienceCard from "./components/ExperienceCard";
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-
-interface Experience {
+export interface Experience {
 	companyName: string;
 	companyLocation: string;
 	position: string;
@@ -13,7 +6,7 @@ interface Experience {
 	description: string;
 }
 
-const experiences: Experience[] = [
+export const experiences: Experience[] = [
 	{
 		companyName: "International Voyager Inc",
 		companyLocation: "Morristown, New Jersey, United States · Remote",
@@ -55,40 +48,3 @@ const experiences: Experience[] = [
 			"I interned at EVVE as a Mobile and Frontend Developer, where I used React Native for mobile development and fundamental web development technologies like HTML5, CSS3, and JavaScript. I was responsible for the frontend of websites, systems, and applications. During this period, I improved my React Native skills and explored other technologies. I also contributed to the launch of an app published on the App Store.",
 	},
 ];
-
-export default function Experiences() {
-	return (
-		<Page>
-			<div className="w-4/5 max-lg:w-full mx-auto">
-				<Swiper
-					effect={"coverflow"}
-					grabCursor={true}
-					centeredSlides={true}
-					slidesPerView={"auto"}
-					coverflowEffect={{
-						rotate: 0,
-						stretch: 0,
-						depth: 600,
-						modifier: 1,
-						slideShadows: false,
-					}}
-					modules={[EffectCoverflow]}
-					className="experienceSwiper"
-					loop={true}
-				>
-					{experiences.map((experience, index) => (
-						<SwiperSlide key={index} className="!h-auto py-4">
-							<ExperienceCard
-								companyLocation={experience.companyLocation}
-								companyName={experience.companyName}
-								description={experience.description}
-								duration={experience.duration}
-								position={experience.position}
-							/>
-						</SwiperSlide>
-					))}
-				</Swiper>
-			</div>
-		</Page>
-	);
-}
