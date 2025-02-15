@@ -3,16 +3,14 @@
 import Link from "next/link";
 import { format } from "date-fns";
 import { motion } from "framer-motion";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { TypeAnimation } from "react-type-animation";
 
-import { ButtonFlashing } from "@/components";
-import { LocationContext } from "@/context";
+import { ButtonFlashing } from "@/components/shared";
 import { socialMedias } from "@/data";
 
 export function Header() {
 	const [contactOpen, setContactOpen] = useState<boolean>(false);
-	const { text } = useContext(LocationContext);
 
 	// Efeito para desabilitar o scroll da página quando o menu estiver aberto
 	useEffect(() => {
@@ -49,7 +47,7 @@ export function Header() {
 										"",
 										1000,
 										"",
-										text,
+										"Brazil - São Paulo",
 										1000,
 										"",
 										"5y working with Frontend O.O",
