@@ -31,7 +31,7 @@ export default function HomePage({ location }: TypeHomePage) {
 		<Page>
 			<div className="w-3/5 max-md:w-full max-lg:w-4/5">
 				<h1 className="text-white text-5xl max-xl:text-4xl max-md:text-2xl font-bold font-merriweather max-md:mb-4 mb-8">
-					Hi, I&apos;m Miguel Riquelmess
+					Hi, I&apos;m Miguel Riquelme
 				</h1>
 				<p className="text-white font-light font-merriweather text-3xl max-xl:text-2xl max-md:text-xl max-sm:text-lg leading-loose">
 					I develop user interfaces and enhance user experiences using web
