@@ -32,7 +32,7 @@ export function Header() {
 			initial={{ top: 300, opacity: 0 }}
 			animate={{ top: 0, opacity: 1 }}
 			exit={{ top: -300, opacity: 0 }}
-			className="w-full relative flex flex-col items-center mb-32 max-md:mb-12"
+			className="w-full relative p-4 flex flex-col items-center mb-32 max-md:mb-12"
 		>
 			<div className="w-full p-0 sm:p-4 m-auto">
 				<header className="w-full flex items-center justify-between ">

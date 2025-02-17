@@ -9,23 +9,23 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className="bg-gray-900 min-h-screen bg-cover bg-no-repeat font-[Merriweather]"
+				className="bg-gray-900 bg-cover bg-no-repeat font-[Merriweather]"
 				style={{
-					backgroundImage: "url(/img/bg-home.jpeg)",
+					backgroundImage: "url(/img/bg-home-2.png)",
 					backgroundSize: "cover",
 					backgroundAttachment: "fixed",
 					backgroundRepeat: "no-repeat",
 					backgroundPosition: "center",
 				}}
 			>
-				<div className="min-h-screen bg-gradient-to-br from-opacity-10 to-transparent backdrop-blur-2xl shadow-lg p-6 flex items-start justify-between flex-col">
+				<main className="h-screen flex flex-col justify-between items-center">
 					<Header />
-					<div className="w-full flex flex-row justify-between px-8 max-lg:px-4 max-lg:flex-col-reverse max-md:gap-16 h-full">
+					<div className="w-full flex flex-row justify-between px-8 max-lg:px-4 max-lg:flex-col-reverse max-md:gap-16 ">
 						{children}
 						<Sidemenu />
 					</div>
 					<Footer />
-				</div>
+				</main>
 			</body>
 		</html>
 	);
