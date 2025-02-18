@@ -17,10 +17,10 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
 }) => {
 	return (
 		<motion.div
-			className="relative p-6 max-md:p-0 overflow-hidden shadow-lg"
+			className="relative p-6 max-md:p-0 overflow-hidden"
 			initial={{ scale: 1 }}
-			whileHover={{ scale: 1.05 }}
-			whileTap={{ scale: 0.95 }}
+			whileHover={{ scale: 1 }}
+			whileTap={{ scale: 1 }}
 			transition={{ type: "spring", stiffness: 300, damping: 30 }}
 		>
 			<div className="relative z-10 flex flex-col gap-3 p-8 bg-black bg-opacity-70 min-h-[400px] max-sm:w-full">
