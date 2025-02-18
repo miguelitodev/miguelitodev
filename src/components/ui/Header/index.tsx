@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { useContext, useEffect, useState } from "react";
 import { TypeAnimation } from "react-type-animation";
 
-import { ButtonFlashing } from "@/components";
+import { ButtonFlashing } from "@/components/shared";
 import { LocationContext } from "@/context";
 import { socialMedias } from "@/data";
 
@@ -32,13 +32,13 @@ export function Header() {
 			initial={{ top: 300, opacity: 0 }}
 			animate={{ top: 0, opacity: 1 }}
 			exit={{ top: -300, opacity: 0 }}
-			className="w-full relative p-4 flex flex-col items-center mb-32 max-md:mb-12"
+			className="w-full p-4 flex flex-col items-center mb-32 max-md:mb-12"
 		>
 			<div className="w-full p-0 sm:p-4 m-auto">
 				<header className="w-full flex items-center justify-between ">
 					<ul>
 						<li>
-							<span className="text-white font-mono font-bold text-sm fixed">
+							<span className="text-white font-mono font-bold text-sm">
 								<TypeAnimation
 									sequence={[
 										"Hi, welcome!",
@@ -66,35 +66,39 @@ export function Header() {
 							</span>
 						</li>
 					</ul>
-					<ButtonFlashing
-						onClick={() => {
-							setContactOpen((prevState) => !prevState);
-						}}
-						className="hidden sm:block p-0" // Botão visível no desktop
-					>
-						{contactOpen ? "Close" : "Contact me"}
-					</ButtonFlashing>
+					{!contactOpen && (
+						<ButtonFlashing
+							action={() => {
+								setContactOpen((prevState) => !prevState);
+							}}
+							className="hidden sm:block p-0" // Botão visível no desktop
+						>
+							Contact me
+						</ButtonFlashing>
+					)}
 				</header>
 			</div>
 
 			{contactOpen && (
 				<motion.div
-					className={`fixed z-10 right-0 w-64 bg-black text-white transition-transform ease-in-out transform ${
+					className={`fixed -top-1 z-10 right-0 w-64 bg-black text-white transition-transform ease-in-out transform ${
 						contactOpen ? "translate-x-0" : "translate-x-full"
 					}`}
-					style={{ minHeight: "calc(100% - 1.5rem)" }}
+					style={{ minHeight: "calc(100% + 4px)" }}
 					initial={{ opacity: 0, x: 300 }}
 					animate={{ opacity: 1, x: 0 }}
 					exit={{ opacity: 0, x: 300 }}
 				>
-					<div className="flex justify-end p-4">
-						<ButtonFlashing
-							onClick={() => setContactOpen(false)}
-							className="text-white"
-						>
-							Close
-						</ButtonFlashing>
-					</div>
+					{contactOpen && (
+						<div className="flex justify-end p-4">
+							<ButtonFlashing
+								action={() => setContactOpen(false)}
+								className="text-white"
+							>
+								Close
+							</ButtonFlashing>
+						</div>
+					)}
 					<ul className="flex flex-col items-center justify-start gap-5 px-4">
 						{socialMedias.map((socialMedia, index) => (
 							<motion.li

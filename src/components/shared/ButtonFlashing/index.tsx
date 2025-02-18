@@ -4,6 +4,7 @@ import React from "react";
 type ButtonFlashingProps = {
 	children: string | React.ReactNode;
 	className?: string;
+	action: () => void;
 } & React.ButtonHTMLAttributes<HTMLButtonElement> &
 	MotionProps;
 
@@ -15,25 +16,16 @@ const initial: { [key: string]: string | number } = {
 const animate: { [key: string]: string | number } = {
 	"--x": "-100%",
 };
-/**
- * Props para o componente ButtonFlashing.
- * @typedef {Object} ButtonFlashingProps
- * @property {string|ReactNode} children - O conteúdo do botão.
- * @property {React.ButtonHTMLAttributes<HTMLButtonElement>} rest - Restante das propriedades de um botão HTML.
- */
 
-/**
- * Componente de botão com efeito de flash.
- * @param {ButtonFlashingProps} props - Props para o componente ButtonFlashing.
- * @returns {JSX.Element} - O elemento do botão com o efeito de flash.
- */
 export const ButtonFlashing: React.FC<ButtonFlashingProps> = ({
 	children,
 	className,
+	action,
 	...rest
 }: ButtonFlashingProps): JSX.Element => {
 	return (
 		<motion.button
+			onClick={() => action()}
 			initial={initial}
 			animate={animate}
 			whileTap={{ scale: 0.8 }}

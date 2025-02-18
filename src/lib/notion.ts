@@ -51,3 +51,25 @@ export const fetchPageBlocks = unstable_cache((pageId: string) => {
 		})
 		.then((res) => res.results as BlockObjectResponse[]);
 });
+
+export const updateLikes = async (
+	pageId: string,
+	currentLikes: number,
+	liked: boolean
+) => {
+	try {
+		const response = await notion.pages.update({
+			page_id: pageId,
+			properties: {
+				likes: {
+					number: liked ? currentLikes - 1 : currentLikes + 1,
+				},
+			},
+		});
+
+		return response;
+	} catch (error) {
+		console.error("Erro ao atualizar curtidas:", error);
+		throw error;
+	}
+};

@@ -1,6 +1,9 @@
 import { fetchPages } from "@/lib/notion";
 import { format } from "date-fns";
 import Image from "next/image";
+import Link from "next/link";
+import { FaHeart } from "react-icons/fa";
+
 export default async function Blog() {
 	const pages = await fetchPages();
 	console.log(pages);
@@ -8,7 +11,7 @@ export default async function Blog() {
 	return (
 		<div className="flex flex-col w-4/6 mx-auto">
 			<div className="mb-16">
-				<h1 className="text-white text-7xl max-xl:text-4xl max-md:text-2xl font-bold font-merriweather max-md:mb-4 mb-4">
+				<h1 className="text-white text-7xl max-sm:text-4xl max-xs:text-2xl font-bold font-merriweather max-md:mb-4 mb-4">
 					<span className="font-mono text-sm text-white">miguelito.dev/</span>
 					Blog
 				</h1>
@@ -20,16 +23,16 @@ export default async function Blog() {
 			</div>
 			<div className="flex flex-col justify-center">
 				{pages.results.map((page: any) => (
-					<ol className="relative border-l border-gray-200 dark:border-gray-500">
-						<li key={page.id} className="mb-10 ml-4">
+					<ol
+						key={page.id}
+						className="relative border-l border-gray-200 dark:border-gray-500"
+					>
+						<li className="mb-10 ml-4">
 							<div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-500 dark:bg-gray-200"></div>
 							<time className="mb-1 text-sm font-normal font-mono leading-none text-white italic">
 								{format(page.properties.date.created_time, "MMMM dd, yyyy")}
 							</time>
-							<div
-								key={page.id}
-								className="relative flex flex-col md:flex-row bg-gradient-to-r from-black via-neutral-900 to-neutral-800 shadow-lg border border-neutral-700 rounded-lg hover:shadow-2xl transition-shadow duration-300 transform group-hover:scale-105 ml-14 mt-8 w-4/5 max-2xl:w-full min-h-[250px]"
-							>
+							<div className="relative flex flex-col md:flex-row bg-gradient-to-r from-black via-neutral-900 to-neutral-800 shadow-lg border border-neutral-700 rounded-lg hover:shadow-2xl transition-shadow duration-300 transform group-hover:scale-105 ml-14 max-lg:ml-0 mt-8 w-4/5 max-2xl:w-full min-h-[250px]">
 								<div className="relative p-2.5 md:w-2/5 shrink-0 overflow-hidden">
 									<Image
 										width={300}
@@ -39,20 +42,21 @@ export default async function Blog() {
 											"https://via.placeholder.com/400"
 										}
 										alt="card-image"
-										className="h-full  w-full rounded-md md:rounded-lg object-cover"
+										className="h-full w-full rounded-md md:rounded-lg object-cover"
 									/>
 								</div>
 								<div className="p-6">
-									<h4 className="mb-2 text-white text-xl font-semibold">
-										{page.properties.Name.title[0].plain_text || "Post title"}
+									<h4 className="mb-2 text-white text-xl font-semibold max-sm:text-sm">
+										{page.properties.Name.title[0].plain_text || "Post title"}{" "}
 									</h4>
-									<p className="mb-8 text-slate-300 leading-normal font-light text-sm">
+									<p className="mb-8 text-slate-300 leading-normal font-light text-sm max-sm:text-xs max-sm:line-clamp-4">
 										{page.properties.description.rich_text[0]?.plain_text ||
 											"Post description"}
 									</p>
-									<div>
-										<a
-											href="#"
+
+									<div className="flex justify-between items-center">
+										<Link
+											href={`/blog/${page.properties.slug.rich_text[0].plain_text}`}
 											className="text-teal-500 font-semibold text-sm hover:underline flex items-center"
 										>
 											Read more
@@ -70,7 +74,13 @@ export default async function Blog() {
 													d="M14 5l7 7m0 0l-7 7m7-7H3"
 												/>
 											</svg>
-										</a>
+										</Link>
+										<div className="flex items-center gap-2">
+											<FaHeart className="text-red-500" size={20} />
+											<span className="text-sm text-white font-mono">
+												{(page.properties.likes.number as any) || 0}
+											</span>
+										</div>
 									</div>
 								</div>
 							</div>

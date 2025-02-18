@@ -20,7 +20,7 @@ export default function RootLayout({
 			>
 				<main className="h-screen flex flex-col justify-between items-center">
 					<Header />
-					<div className="w-full flex flex-row justify-between px-8 max-lg:px-4 max-lg:flex-col-reverse max-md:gap-16 ">
+					<div className="w-full flex flex-row justify-between px-8 max-lg:px-4 max-lg:flex-col max-md:flex-col-reverse max-lg:gap-16 ">
 						{children}
 						<Sidemenu />
 					</div>

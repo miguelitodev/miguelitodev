@@ -13,10 +13,11 @@ export const Sidemenu = () => {
 		{ label: "Projects", href: "/projects" },
 		{ label: "Experiences", href: "/experiences" },
 		{ label: "Tecnologies", href: "/tecnologies" },
+		{ label: "Blog", href: "/blog" },
 	];
 
 	return (
-		<ul className="space-y-4 flex flex-col items-end">
+		<ul className="gap-4 flex flex-col items-end">
 			{menuItems.map(
 				(item) =>
 					currentPath !== item.href && (
