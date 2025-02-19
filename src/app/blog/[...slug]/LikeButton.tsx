@@ -61,7 +61,7 @@ const LikeButton = ({
 				onClick={() => {
 					void handleLike(); // Evita o erro do ESLint
 				}}
-				className={`cursor-pointer transition-transform duration-300 outline-white ${
+				className={`cursor-pointer transition-transform max-md:w-6 max-md:ml-8 duration-300 outline-white ${
 					liked ? "text-red-500 scale-110" : "text-gray-400"
 				}`}
 				size={25}

@@ -121,9 +121,9 @@ export default async function Page({ params }: { params: Params }) {
 	const html: string = await renderer.render(...blocks);
 
 	return (
-		<div className="flex flex-col mx-auto max-w-[60%]">
+		<div className="flex flex-col mx-auto max-sm:w-full md:w-[60%]">
 			<div className="mb-8">
-				<h1 className="text-4xl font-bold mb-4 text-white">
+				<h1 className="text-4xl font-bold mb-4 text-white max-md:text-2xl">
 					{post.properties.Name.title[0].plain_text}
 				</h1>
 				<div className="flex justify-between items-center">

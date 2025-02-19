@@ -3,7 +3,7 @@
 }
 
 .frontend-blog p {
-	@apply font-light leading-8 text-lg w-full;
+	@apply font-light leading-8 text-lg w-full max-md:text-base;
 }
 
 
