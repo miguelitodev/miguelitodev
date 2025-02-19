@@ -1,7 +1,18 @@
 {
 	"name": "miguelito.dev",
-	"version": "0.1.0",
+	"version": "1.1.0",
 	"private": true,
+	"description": "My personal portfolio and blog, built with Next.js 15 and Tailwind CSS.",
+	"author": "Miguel Riquelme",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/miguelitodev/miguelitodev.git"
+	},
+	"homepage": "https://miguelito.dev",
+	"bugs": {
+		"url": "https://github.com/miguelitodev/miguelitodev/issues"
+	},
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
@@ -10,6 +21,10 @@
 	},
 	"dependencies": {
 		"@heroicons/react": "^2.2.0",
+		"@notion-render/bookmark-plugin": "^0.0.2",
+		"@notion-render/client": "^0.0.2",
+		"@notion-render/hljs-plugin": "^0.0.2",
+		"@notionhq/client": "^2.2.15",
 		"axios": "^1.7.9",
 		"date-fns": "^3.6.0",
 		"framer-motion": "^11.18.2",
@@ -22,6 +37,7 @@
 		"tailwind-merge": "^2.6.0"
 	},
 	"devDependencies": {
+		"@tailwindcss/typography": "^0.5.16",
 		"@types/node": "^20.17.16",
 		"@types/react": "^18.3.18",
 		"@types/react-dom": "^18.3.5",

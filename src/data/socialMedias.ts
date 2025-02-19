@@ -1,14 +1,10 @@
-/**
- * @typedef {Object} SocialMedia
- * @property {string} id - O ID da rede social.
- * @property {string} name - O nome da rede social.
- * @property {string} link - O link para a página da rede social.
- */
+export interface SocialMedia {
+	id: string;
+	name: string;
+	link: string;
+}
 
-/**
- * @type {SocialMedia[]}
- */
-export const socialMedias = [
+export const socialMedias: SocialMedia[] = [
 	{
 		id: "github",
 		name: "GitHub",

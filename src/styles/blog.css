@@ -1,0 +1,20 @@
+.frontend-blog {
+	@apply max-w-full
+}
+
+.frontend-blog p {
+	@apply font-light leading-8 text-lg w-full;
+}
+
+
+.frontend-blog hr {
+	@apply w-1/12 mx-auto my-24;
+}
+
+.frontend-blog h1 {
+	@apply font-mono uppercase;
+}
+
+.frontend-blog h2 {
+	@apply uppercase;
+}
