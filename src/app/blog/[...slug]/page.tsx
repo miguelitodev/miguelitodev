@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-redundant-type-constituents */
 
-// @ts-ignore
 import { fetchBySlug, fetchPageBlocks, notion } from "@/lib/notion";
 import { NotionRenderer } from "@notion-render/client";
 import hljsPlugin from "@notion-render/hljs-plugin";
@@ -9,9 +8,7 @@ import LikeButton from "./LikeButton";
 import { format } from "date-fns";
 
 // Tipagem para os parâmetros da URL
-type Params = {
-	slug: string;
-};
+type Params = Promise<{ slug: string }>;
 
 type Post = {
 	id: string;
@@ -19,6 +16,7 @@ type Post = {
 		Name: { title: { plain_text: string }[] };
 		date: { created_time: string };
 		likes?: { number: number };
+		image?: { url: string };
 	};
 };
 
@@ -26,7 +24,6 @@ type Block = {
 	object: string;
 	id: string;
 	type: string;
-	// Adicione outras propriedades conforme necessário
 };
 
 // Tipagem para as propriedades do Notion
@@ -45,15 +42,54 @@ type FetchedPostResponse =
 	  }
 	| undefined;
 
-export default async function Page({ params }: { params: Promise<Params> }) {
-	const resolvedParams = await params; // Resolva a Promise aqui
+export async function generateMetadata({ params }: { params: Params }) {
+	const { slug } = await params;
+	const post = await fetchBySlug(slug);
 
-	const { slug } = resolvedParams;
+	if (!post) {
+		return {
+			title: "Post not found | Miguel Riquelme",
+			description: "This post could not be found.",
+		};
+	}
 
-	// Tipando o retorno da função fetchBySlug
+	const postTitle =
+		(post.properties.Name as any).title[0]?.plain_text || "Untitled Post";
+	const postDescription = `Read about ${postTitle} and more insights on frontend development.`;
+	const postUrl = `https://miguelito.dev/blog/${slug}`;
+
+	return {
+		title: `${postTitle} | Miguel Riquelme`,
+		description: postDescription,
+		openGraph: {
+			title: postTitle,
+			description: postDescription,
+			url: postUrl,
+			type: "article",
+			images: [
+				{
+					url: (post.properties.image as any).url,
+					width: 1200,
+					height: 630,
+					alt: postTitle,
+				},
+			],
+		},
+		twitter: {
+			card: "summary_large_image",
+			title: postTitle,
+			description: postDescription,
+			images: [(post.properties.image as any).url],
+		},
+		robots: "index, follow",
+	};
+}
+
+export default async function Page({ params }: { params: Params }) {
+	const { slug } = await params;
+
 	const fetchedPost: FetchedPostResponse = await fetchBySlug(slug);
 
-	// Garantir que fetchedPost tenha as propriedades esperadas
 	const post: Post | null =
 		fetchedPost && fetchedPost.properties
 			? {
