@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ChevronRightIcon } from "@heroicons/react/24/solid";
+import { FaChevronRight } from "react-icons/fa";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -49,7 +49,7 @@ export const Sidemenu = () => {
 							>
 								{item.label}
 							</Link>
-							<ChevronRightIcon className="h-5 w-5 text-neutral-100 inline-block ml-2" />
+							<FaChevronRight className="h-5 w-5 text-neutral-100 inline-block ml-2" />
 						</motion.li>
 					)
 			)}

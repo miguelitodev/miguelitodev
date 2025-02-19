@@ -5,14 +5,14 @@ export function Footer() {
 
 			<div className="flex space-x-4">
 				<a
-					href="pdfs/curriculum-ptBR.pdf"
+					href="/pdfs/curriculum-ptBR.pdf"
 					download
 					className="text-white font-medium hover:text-gray-400 transition duration-300"
 				>
 					Curriculum pt-BR
 				</a>
 				<a
-					href="pdfs/curriculum-enUS.pdf"
+					href="/pdfs/curriculum-enUS.pdf"
 					download
 					className="text-white font-medium hover:text-gray-400 transition duration-300"
 				>
