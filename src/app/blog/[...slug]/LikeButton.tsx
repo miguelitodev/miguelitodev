@@ -2,6 +2,11 @@
 import { useState, useEffect } from "react";
 import { FaHeart } from "react-icons/fa";
 
+type LikeResponse = {
+	success: boolean;
+	likes: number;
+};
+
 const LikeButton = ({
 	postId,
 	currentLikes,
@@ -19,7 +24,7 @@ const LikeButton = ({
 		}
 	}, [postId]);
 
-	const handleLike = async () => {
+	const handleLike = async (): Promise<void> => {
 		const newLikes = liked ? likes - 1 : likes + 1;
 
 		setLikes(newLikes);
@@ -40,7 +45,7 @@ const LikeButton = ({
 			});
 
 			if (response.ok) {
-				const data = await response.json();
+				const data = (await response.json()) as LikeResponse;
 				console.log("Resposta do servidor:", data);
 			} else {
 				console.error("Erro ao atualizar curtidas", response.status);
@@ -53,7 +58,9 @@ const LikeButton = ({
 	return (
 		<div className="flex items-center gap-2">
 			<FaHeart
-				onClick={handleLike}
+				onClick={() => {
+					void handleLike(); // Evita o erro do ESLint
+				}}
 				className={`cursor-pointer transition-transform duration-300 outline-white ${
 					liked ? "text-red-500 scale-110" : "text-gray-400"
 				}`}
