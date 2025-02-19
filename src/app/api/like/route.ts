@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-redundant-type-constituents */
+
 import { Client } from "@notionhq/client";
 
 interface LikeRequestBody {
@@ -18,7 +20,9 @@ const notion = new Client({
 });
 
 export async function POST(req: Request) {
-	const { postId, currentLikes } = (await req.json()) as LikeRequestBody;
+	const { postId, currentLikes }: LikeRequestBody = await req.json();
+
+	console.log("postId:", postId, "currentLikes:", currentLikes);
 
 	try {
 		const response: Partial<NotionPageResponse> = await notion.pages.update({
@@ -30,8 +34,11 @@ export async function POST(req: Request) {
 			},
 		});
 
+		console.log("Resposta do Notion:", response);
+
 		return new Response(JSON.stringify(response), { status: 200 });
 	} catch (error) {
+		console.error("Erro ao atualizar curtidas:", error);
 		return new Response("Erro ao atualizar curtidas", { status: 500 });
 	}
 }
