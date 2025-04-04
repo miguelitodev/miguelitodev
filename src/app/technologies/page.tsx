@@ -31,7 +31,7 @@ const categoryOrder = [
   "Mobile",
 ];
 
-export default function Tecnologies() {
+export default function Technologies() {
   return (
     <div className="flex flex-col w-4/6 mx-auto max-sm:w-full">
       {/* Header */}

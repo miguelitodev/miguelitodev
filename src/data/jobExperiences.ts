@@ -32,6 +32,14 @@ export const experiences: Experience[] = [
       "Worked on the redesign of one of the company’s websites, making it more attractive and ensuring compatibility with smartphones and tablets, all done remotely.",
   },
   {
+    companyName: "etikett.de",
+    companyLocation: "Germany · Remote",
+    position: "Frontend Developer",
+    duration: "Dec 2022 - Aug 2023 · 9 months",
+    description:
+      "I worked as a Frontend Developer, contributing to the completion of the company’s new online store by creating new pages, implementing new features, and improving the code to make it more robust. Using technologies like Next.js, TypeScript, and WordPress CMS, I ensured seamless integration and enhanced the user experience.",
+  },
+  {
     companyName: "Printi - a Cimpress company",
     companyLocation: "Barueri, São Paulo, Brazil · Remote",
     position: "Frontend Developer (Mid-Level)",
@@ -46,14 +54,6 @@ export const experiences: Experience[] = [
     duration: "May 2021 - Apr 2023 · 2 years",
     description:
       "I worked as a React Frontend Developer at Printi. Printi is an innovative online printing company that offers high-quality digital and offset printing at affordable prices. I was responsible for maintaining and improving applications, bringing solutions, and implementing initiatives to add value to the websites.",
-  },
-  {
-    companyName: "etikett.de",
-    companyLocation: "Germany · Remote",
-    position: "Frontend Developer",
-    duration: "Dec 2022 - Aug 2023 · 9 months",
-    description:
-      "I worked as a Frontend Developer, contributing to the completion of the company’s new online store by creating new pages, implementing new features, and improving the code to make it more robust. Using technologies like Next.js, TypeScript, and WordPress CMS, I ensured seamless integration and enhanced the user experience.",
   },
   {
     companyName: "EVVE",
