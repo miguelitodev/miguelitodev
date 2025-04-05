@@ -8,7 +8,10 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { ButtonFlashing } from "@/components/shared";
 import { SidemenuContext } from "@/context";
-import { socialMedias } from "@/data/socialMedias";
+import {
+  personalSocialMedias,
+  professionalSocialMedias,
+} from "@/data/socialMedias";
 
 export const Sidemenu = () => {
   const currentPath = usePathname();
@@ -84,10 +87,30 @@ export const Sidemenu = () => {
 
         <div className="mt-10 border-t border-gray-700 pt-6">
           <h3 className="uppercase text-gray-400 font-bold text-sm mb-4">
-            Social
+            Professional
           </h3>
           <div className="flex flex-wrap gap-2 mt-6 justify-start">
-            {socialMedias.map((media) => (
+            {professionalSocialMedias.map((media) => (
+              <ButtonFlashing
+                key={media.id}
+                action={() => {
+                  window.open(media.link, "_blank");
+                  setIsMenuOpen!(false);
+                }}
+                className="px-4 py-2 text-sm text-left"
+              >
+                {media.name}
+              </ButtonFlashing>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-10 border-t border-gray-700 pt-6">
+          <h3 className="uppercase text-gray-400 font-bold text-sm mb-4">
+            Personal
+          </h3>
+          <div className="flex flex-wrap gap-2 mt-6 justify-start">
+            {personalSocialMedias.map((media) => (
               <ButtonFlashing
                 key={media.id}
                 action={() => {
