@@ -19,7 +19,7 @@ export const Sidemenu = () => {
 
   const menuItems = [
     { label: "Home", href: "/" },
-    { label: "Projects", href: "/projects" },
+    { label: "Repositories", href: "/repositories" },
     { label: "Experiences", href: "/experiences" },
     { label: "Technologies", href: "/technologies" },
     { label: "Blog", href: "/blog" },
