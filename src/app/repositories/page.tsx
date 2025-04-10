@@ -9,9 +9,7 @@ interface RepositoriesProps {
 }
 
 // `searchParams` is injected by Next.js from the URL (?page=...)
-export default async function Repositories({
-  searchParams,
-}: RepositoriesProps) {
+export default function Repositories({ searchParams }: RepositoriesProps) {
   const pageParam = Number(searchParams?.page);
   const currentPage = Number.isNaN(pageParam) || pageParam < 1 ? 1 : pageParam;
 

@@ -2,21 +2,10 @@ import { formatDistanceToNow } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import { FaCodeBranch, FaExternalLinkAlt, FaStar } from "react-icons/fa";
 import { PaginationList } from "../PaginationList";
-
-export interface Repo {
-  id: number;
-  name: string;
-  description: string;
-  html_url: string;
-  stargazers_count: number;
-  forks_count: number;
-  topics: string[];
-  language: string | null;
-  updated_at: string;
-}
+import { Repository } from "@/types";
 
 interface ListProps {
-  repos: Repo[];
+  repos: Repository[];
 }
 
 const gradients = [

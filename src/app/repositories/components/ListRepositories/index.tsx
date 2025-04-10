@@ -1,11 +1,12 @@
 import axios from "axios";
 import { Success } from "./success";
 import { ErrorMessage } from "@/components/shared/ErrorMessage";
+import { Repository } from "@/types";
 
-async function fetchRepos(currentPage: number) {
+async function fetchRepos(currentPage: number): Promise<Repository[]> {
   try {
     const perPage = 12;
-    const res = await axios.get(
+    const res = await axios.get<Repository[]>(
       "https://api.github.com/users/miguelitodev/repos?sort=updated&direction=desc",
       {
         params: { per_page: perPage, page: currentPage },
