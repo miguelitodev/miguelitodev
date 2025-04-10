@@ -29,8 +29,8 @@ export function ClientWrapper({ children }: { children: React.ReactNode }) {
               <AnimatePresence>
                 {showTransition && (
                   <motion.div
-                    initial={{ opacity: 1, scale: 1 }}
-                    animate={{ opacity: 0, scale: 1.1 }}
+                    initial={{ opacity: 1 }}
+                    animate={{ opacity: 0 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 1, ease: "easeInOut" }}
                     className="absolute inset-0 z-50 pointer-events-none"
@@ -60,7 +60,6 @@ export function ClientWrapper({ children }: { children: React.ReactNode }) {
 
                 <Sidemenu />
               </div>
-
               <Footer />
             </main>
           </SidemenuProvider>
