@@ -2,15 +2,13 @@ import { ListRepositories } from "./components/ListRepositories";
 import { Suspense } from "react";
 import { Loading } from "./components/ListRepositories/loading";
 
-interface RepositoriesProps {
-  searchParams?: {
-    page?: string;
-  };
-}
-
-// `searchParams` is injected by Next.js from the URL (?page=...)
-export default function Repositories({ searchParams }: RepositoriesProps) {
-  const pageParam = Number(searchParams?.page);
+export default async function Repositories({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const { page } = await searchParams;
+  const pageParam = Number(page);
   const currentPage = Number.isNaN(pageParam) || pageParam < 1 ? 1 : pageParam;
 
   return (
