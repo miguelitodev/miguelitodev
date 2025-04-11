@@ -12,18 +12,11 @@ import {
   personalSocialMedias,
   professionalSocialMedias,
 } from "@/data/socialMedias";
+import { menuItems } from "@/data";
 
 export const Sidemenu = () => {
   const currentPath = usePathname();
   const { isMenuOpen, setIsMenuOpen } = useContext(SidemenuContext);
-
-  const menuItems = [
-    { label: "Home", href: "/" },
-    { label: "Repositories", href: "/repositories" },
-    { label: "Experiences", href: "/experiences" },
-    { label: "Technologies", href: "/technologies" },
-    { label: "Blog", href: "/blog" },
-  ];
 
   return (
     <>

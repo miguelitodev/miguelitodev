@@ -54,6 +54,7 @@ export function Header() {
           <div className="min-h-10">
             {!isMenuOpen && (
               <ButtonFlashing
+                tooltip="Quick access"
                 action={() => {
                   setIsMenuOpen!(!isMenuOpen);
                 }}

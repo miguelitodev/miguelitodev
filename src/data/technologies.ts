@@ -154,4 +154,4 @@ export const technologies: Technology[] = [
     url: "https://vitejs.dev/",
     category: "Tools",
   },
-];
+].sort((a, b) => a.technology.localeCompare(b.technology));
