@@ -1,20 +1,54 @@
 "use client";
 
+import { ButtonFlashing } from "@/components/shared";
 import { experiences } from "@/data";
 
 export default function Experiences() {
   return (
-    <div className="flex flex-col w-4/6 mx-auto  max-sm:w-full">
-      <div className="mb-16">
+    <div className="flex flex-col w-4/6 mx-auto max-sm:w-full">
+      <div className="mb-16 flex flex-col gap-4">
         <h1 className="text-white text-7xl max-sm:text-4xl max-xs:text-2xl font-bold font-merriweather max-md:mb-4 mb-4">
           <span className="font-mono text-sm text-white">miguelito.dev/</span>
           Experience
         </h1>
+
         <p className="text-white font-light font-merriweather text-2xl max-xl:text-xl max-md:text-lg max-sm:text-md leading-loose">
           A journey through my professional experience, showcasing my career
           path and achievements.
         </p>
+
+        <p className="text-white font-light font-merriweather text-2xl max-xl:text-xl max-md:text-lg max-sm:text-md leading-loose">
+          I'm a passionate Frontend Developer since 2020, focused on building
+          minimalistic, high-performance, and user-friendly web applications.
+        </p>
+
+        <p className="text-white font-light font-merriweather text-2xl max-xl:text-xl max-md:text-lg max-sm:text-md leading-loose">
+          I specialize in React, Next.js, and TypeScript, and have a strong
+          background in UI/UX design. My journey includes working with companies
+          like Qintess, EVVE, and Printi, as well as international projects in
+          Germany and the US.
+        </p>
+
+        <p className="text-white font-light font-merriweather text-2xl max-xl:text-xl max-md:text-lg max-sm:text-md leading-loose">
+          I’m always looking for ways to learn and improve my skills, using
+          modern tools like TailwindCSS, Zustand, and Storybook to deliver
+          optimal user experiences.
+        </p>
+
+        <ButtonFlashing
+          action={() => {
+            window.open(
+              "https://www.linkedin.com/in/miguelitodev",
+              "_blank",
+              "noopener,noreferrer"
+            );
+          }}
+          className="w-fit"
+        >
+          Check it out
+        </ButtonFlashing>
       </div>
+
       <div className="flex flex-col justify-center">
         {experiences.map(
           (
