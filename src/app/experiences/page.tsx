@@ -18,8 +18,9 @@ export default function Experiences() {
         </p>
 
         <p className="text-white font-light font-merriweather text-2xl max-xl:text-xl max-md:text-lg max-sm:text-md leading-loose">
-          I'm a passionate Frontend Developer since 2020, focused on building
-          minimalistic, high-performance, and user-friendly web applications.
+          I&apos;m a passionate Frontend Developer since 2020, focused on
+          building minimalistic, high-performance, and user-friendly web
+          applications.
         </p>
 
         <p className="text-white font-light font-merriweather text-2xl max-xl:text-xl max-md:text-lg max-sm:text-md leading-loose">
@@ -30,7 +31,7 @@ export default function Experiences() {
         </p>
 
         <p className="text-white font-light font-merriweather text-2xl max-xl:text-xl max-md:text-lg max-sm:text-md leading-loose">
-          I’m always looking for ways to learn and improve my skills, using
+          I&apos;m always looking for ways to learn and improve my skills, using
           modern tools like TailwindCSS, Zustand, and Storybook to deliver
           optimal user experiences.
         </p>
