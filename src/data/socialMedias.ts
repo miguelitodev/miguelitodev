@@ -50,7 +50,7 @@ export const professionalSocialMedias: SocialMedia[] = [
     name: "E-mail",
     link: "mailto:miguelrisquelme@gmail.com",
   },
-];
+].sort((a, b) => a.name.localeCompare(b.name));
 
 export const personalSocialMedias: SocialMedia[] = [
   {
@@ -103,4 +103,4 @@ export const personalSocialMedias: SocialMedia[] = [
     name: "Twitch",
     link: "https://www.twitch.tv/miguelitoodev",
   },
-];
+].sort((a, b) => a.name.localeCompare(b.name));

@@ -37,7 +37,7 @@ export default function HomePage() {
       <div className="text-left"></div>
       <p className="text-white font-light font-merriweather text-3xl max-xl:text-2xl max-md:text-xl max-sm:text-lg leading-loose">
         I develop user interfaces and enhance user experiences using web
-        technologies. With 5 years of experience, I build responsive and
+        technologies. Since 2020 working with Front-end, I build responsive and
         efficient web applications while solving real-world user problems.
       </p>
     </div>

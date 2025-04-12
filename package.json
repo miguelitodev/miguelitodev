@@ -24,6 +24,7 @@
 		"@notion-render/client": "^0.0.2",
 		"@notion-render/hljs-plugin": "^0.0.2",
 		"@notionhq/client": "^2.2.15",
+		"@radix-ui/react-tooltip": "^1.2.0",
 		"axios": "^1.7.9",
 		"date-fns": "^3.6.0",
 		"framer-motion": "^11.18.2",

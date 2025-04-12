@@ -1,10 +1,12 @@
 import { motion, MotionProps } from "framer-motion";
 import React from "react";
+import * as Tooltip from "@radix-ui/react-tooltip";
 
 type ButtonFlashingProps = {
   children: string | React.ReactNode;
   className?: string;
   action: () => void;
+  tooltip?: string;
 } & React.ButtonHTMLAttributes<HTMLButtonElement> &
   MotionProps;
 
@@ -21,9 +23,10 @@ export const ButtonFlashing: React.FC<ButtonFlashingProps> = ({
   children,
   className,
   action,
+  tooltip,
   ...rest
 }: ButtonFlashingProps): JSX.Element => {
-  return (
+  const button = (
     <motion.button
       onClick={() => action()}
       initial={initial}
@@ -57,5 +60,25 @@ export const ButtonFlashing: React.FC<ButtonFlashingProps> = ({
       </span>
       <span className="block absolute inset-0 rounded-md p-px linear-overlay" />
     </motion.button>
+  );
+
+  return tooltip ? (
+    <Tooltip.Provider delayDuration={100}>
+      <Tooltip.Root>
+        <Tooltip.Trigger asChild>{button}</Tooltip.Trigger>
+        <Tooltip.Portal>
+          <Tooltip.Content
+            side="top"
+            sideOffset={8}
+            className="z-50 px-3 py-1 rounded-md bg-zinc-900/90 text-white text-xs shadow-lg backdrop-blur-sm border border-white/10 animate-fadeIn transition-all duration-300 data-[state=delayed-open]:scale-100 data-[state=closed]:scale-95 data-[state=closed]:opacity-0 data-[state=delayed-open]:opacity-100"
+          >
+            {tooltip}
+            <Tooltip.Arrow className="fill-zinc-900" />
+          </Tooltip.Content>
+        </Tooltip.Portal>
+      </Tooltip.Root>
+    </Tooltip.Provider>
+  ) : (
+    button
   );
 };

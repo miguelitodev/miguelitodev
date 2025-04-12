@@ -37,7 +37,7 @@ export function Header() {
                     text,
                     1000,
                     "",
-                    "5y working with Frontend O.O",
+                    "Frontend exp. since 2020",
                     1000,
                     "",
                     `Now is ${format(new Date().getTime(), "HH:mm")}`,
@@ -54,6 +54,7 @@ export function Header() {
           <div className="min-h-10">
             {!isMenuOpen && (
               <ButtonFlashing
+                tooltip="Quick access"
                 action={() => {
                   setIsMenuOpen!(!isMenuOpen);
                 }}

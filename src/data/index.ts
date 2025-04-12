@@ -1,3 +1,4 @@
-export { personalSocialMedias, professionalSocialMedias } from "./socialMedias";
-export { experiences } from "./jobExperiences";
-export { technologies } from "./technologies";
+export * from "./socialMedias";
+export * from "./jobExperiences";
+export * from "./technologies";
+export * from "./menuItems";
