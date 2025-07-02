@@ -2,7 +2,7 @@ import { MoviesApiResponse } from "@/types";
 
 export const fetchMovies = async () => {
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}` : 'http://localhost:3000';
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
     const response = await fetch(`${baseUrl}/api/movies`);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
