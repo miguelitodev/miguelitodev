@@ -54,6 +54,11 @@ export const professionalSocialMedias: SocialMedia[] = [
 
 export const personalSocialMedias: SocialMedia[] = [
   {
+    id: "letterboxd",
+    name: "Letterboxd",
+    link: "https://letterboxd.com/miguelitodev",
+  },
+  {
     id: "twitter",
     name: "Twitter",
     link: "https://x.com/miguelitoodev",

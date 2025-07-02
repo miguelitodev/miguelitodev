@@ -53,12 +53,12 @@ export const Sidemenu = () => {
             (item) =>
               currentPath !== item.href && (
                 <li key={item.label}>
-                  <Link href={item.href} passHref>
-                    <motion.a
-                      whileHover={{ x: 6 }}
-                      className="group text-neutral-100 font-bold text-md cursor-pointer flex items-center hover:text-gray-400 transition-colors duration-200"
-                      onClick={() => setIsMenuOpen!(false)}
-                    >
+                  <motion.div
+                    whileHover={{ x: 6 }}
+                    className="group text-neutral-100 font-bold text-md cursor-pointer hover:text-gray-400 transition-colors duration-200"
+                    onClick={() => setIsMenuOpen!(false)}
+                  >
+                    <Link href={item.href} passHref className="flex items-center">
                       {item.label}
                       <motion.span
                         whileHover={{ x: 4 }}
@@ -71,8 +71,8 @@ export const Sidemenu = () => {
                       >
                         <FaChevronRight className="h-5 w-5" />
                       </motion.span>
-                    </motion.a>
-                  </Link>
+                    </Link>
+                  </motion.div>
                 </li>
               )
           )}
