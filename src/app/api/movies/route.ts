@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import Parser from 'rss-parser';
 
+export const revalidate = 0;
+
 export async function GET() {
   try {
     const parser = new Parser();
