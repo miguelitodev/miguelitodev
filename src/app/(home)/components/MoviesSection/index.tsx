@@ -6,6 +6,7 @@ import { Movie } from "@/types/movie";
 import { MovieCard } from "@/app/movies/components/ListMovies/MovieCard";
 import Link from "next/link";
 import { ArrowRainbowRight } from "@/assets/icons";
+import { MovieSkeleton } from "./MovieSkeleton";
 
 interface MoviesApiResponse {
   movies: Movie[];
@@ -13,6 +14,7 @@ interface MoviesApiResponse {
 
 export default function MoviesSection() {
   const [movies, setMovies] = useState<Movie[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -23,6 +25,8 @@ export default function MoviesSection() {
         setMovies(data.movies.slice(0, 5));
       } catch (error) {
         console.error("Error fetching movies:", error);
+      } finally {
+        setIsLoading(false);
       }
     }
 
@@ -59,11 +63,17 @@ export default function MoviesSection() {
           ref={scrollContainerRef}
           className="flex overflow-x-auto space-x-4 pb-4 scrollbar-hide"
         >
-          {movies.map((movie) => (
-            <div key={movie.link} className="flex-none w-48">
-              <MovieCard movie={movie} />
-            </div>
-          ))}
+          {isLoading
+            ? Array.from({ length: 5 }).map((_, index) => (
+                <div key={index} className="flex-none w-48">
+                  <MovieSkeleton />
+                </div>
+              ))
+            : movies.map((movie) => (
+                <div key={movie.link} className="flex-none w-48">
+                  <MovieCard movie={movie} />
+                </div>
+              ))}
         </div>
         <Link href="/movies" className="ml-4 flex-shrink-0">
           <ArrowRainbowRight />
