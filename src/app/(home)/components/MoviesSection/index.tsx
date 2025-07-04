@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Movie } from "@/types/movie";
 import { MovieCard } from "@/app/movies/components/ListMovies/MovieCard";
 import Link from "next/link";
@@ -13,6 +13,7 @@ interface MoviesApiResponse {
 
 export default function MoviesSection() {
   const [movies, setMovies] = useState<Movie[]>([]);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     async function getMovies() {
@@ -26,6 +27,24 @@ export default function MoviesSection() {
     }
 
     void getMovies();
+
+    const handleWheel = (event: WheelEvent) => {
+      if (scrollContainerRef.current) {
+        event.preventDefault();
+        scrollContainerRef.current.scrollLeft += event.deltaY;
+      }
+    };
+
+    const currentRef = scrollContainerRef.current;
+    if (currentRef) {
+      currentRef.addEventListener("wheel", handleWheel, { passive: false });
+    }
+
+    return () => {
+      if (currentRef) {
+        currentRef.removeEventListener("wheel", handleWheel);
+      }
+    };
   }, []);
 
   return (
@@ -36,7 +55,10 @@ export default function MoviesSection() {
         Letterboxd.
       </p>
       <div className="flex items-center mt-6">
-        <div className="flex overflow-x-auto space-x-4 pb-4">
+        <div
+          ref={scrollContainerRef}
+          className="flex overflow-x-auto space-x-4 pb-4 scrollbar-hide"
+        >
           {movies.map((movie) => (
             <div key={movie.link} className="flex-none w-48">
               <MovieCard movie={movie} />
