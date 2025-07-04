@@ -1,1 +1,2 @@
-export { ArrowRainbowDown } from "./ArrowRainbowDown";
+export * from "./ArrowRainbowDown";
+export * from "./ArrowRainbowRight";

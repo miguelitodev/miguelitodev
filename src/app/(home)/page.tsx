@@ -1,10 +1,11 @@
 "use client";
 
 import { TypeAnimation } from "react-type-animation";
+import MoviesSection from "./components/MoviesSection";
 
 export default function HomePage() {
   return (
-    <div className="w-3/5 max-md:w-full max-lg:w-4/5">
+    <div className="w-3/5 max-md:w-full max-lg:w-4/5 mx-auto">
       <h1 className="text-white text-5xl max-xl:text-4xl max-md:text-2xl font-bold font-merriweather max-md:mb-4 mb-4">
         Hi, I&apos;m{" "}
         <span className="font-bold leading-loose  font-merriweather lg:leading-normal tracking-wider text-center bg-clip-text text-transparent bg-[linear-gradient(to_right,theme(colors.indigo.400),theme(colors.indigo.100),theme(colors.sky.400),theme(colors.fuchsia.400),theme(colors.sky.400),theme(colors.indigo.100),theme(colors.indigo.400))] bg-[length:200%_auto] animate-gradient">
@@ -40,6 +41,7 @@ export default function HomePage() {
         technologies. Since 2020 working with Front-end, I build responsive and
         efficient web applications while solving real-world user problems.
       </p>
+      <MoviesSection />
     </div>
   );
 }
