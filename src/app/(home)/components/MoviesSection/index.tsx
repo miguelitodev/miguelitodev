@@ -19,7 +19,7 @@ export default function MoviesSection() {
       try {
         const response = await fetch("/api/movies");
         const data = (await response.json()) as MoviesApiResponse;
-        setMovies(data.movies.slice(0, 6));
+        setMovies(data.movies.slice(0, 5));
       } catch (error) {
         console.error("Error fetching movies:", error);
       }
@@ -36,12 +36,14 @@ export default function MoviesSection() {
         Letterboxd.
       </p>
       <div className="flex items-center mt-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div className="flex overflow-x-auto space-x-4 pb-4">
           {movies.map((movie) => (
-            <MovieCard key={movie.link} movie={movie} />
+            <div key={movie.link} className="flex-none w-48">
+              <MovieCard movie={movie} />
+            </div>
           ))}
         </div>
-        <Link href="/movies" className="ml-4">
+        <Link href="/movies" className="ml-4 flex-shrink-0">
           <ArrowRainbowRight />
         </Link>
       </div>
