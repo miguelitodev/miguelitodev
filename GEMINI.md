@@ -36,6 +36,14 @@ Este documento descreve as preferências e o fluxo de trabalho esperado ao inter
     *   **Skeleton Loaders:** Utilizar skeleton loaders (máscaras de carregamento) para indicar que o conteúdo está sendo carregado, especialmente em seções que dependem de requisições assíncronas.
     *   **Estilo:** Manter a consistência com o estilo e as convenções de código existentes no projeto (fontes, tamanhos, responsividade, etc.).
 
+## Configurações e Ferramentas Adicionais
+
+*   **Testes Unitários (Jest):** O projeto utiliza Jest para testes unitários. Novos testes devem ser adicionados para funções puras e lógicas de dados, seguindo o padrão `__tests__/`. Para rodar os testes, use `npm test`.
+*   **CI/CD (GitHub Actions):** Um workflow de CI/CD foi configurado no GitHub Actions (`.github/workflows/main.yml`). Ele executa `lint`, `test` e `build` em cada `push` e `pull_request` para a branch `master`.
+*   **Otimização de Fontes (Next.js `next/font`):** As fontes do projeto são otimizadas usando o `next/font` do Next.js para melhor performance e carregamento.
+*   **Linter (ESLint):** O ESLint está configurado para garantir a qualidade do código. Atualmente, a migração para o novo sistema de configuração do ESLint (flat config) está pendente devido a um `SyntaxError` persistente no ambiente de desenvolvimento. O `npm run lint` ainda usa a configuração `.eslintrc.json`.
+*   **Formatador (Prettier) e Lint-Staged:** A integração do Prettier e Lint-Staged foi revertida temporariamente devido ao problema de migração do ESLint. Será reavaliada após a resolução do problema do ESLint.
+
 ---
 
 Este documento pode ser atualizado conforme novas preferências ou fluxos de trabalho forem estabelecidos.
