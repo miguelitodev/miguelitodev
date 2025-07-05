@@ -6,6 +6,7 @@ Este documento descreve as preferências e o fluxo de trabalho esperado ao inter
 
 1.  **Entendimento e Planejamento:** Antes de qualquer ação significativa, o Gemini deve buscar entender completamente a solicitação e o contexto do projeto. Um plano conciso será apresentado se a tarefa for complexa ou envolver múltiplas etapas.
 2.  **Verificação:** Após modificações de código, o Gemini deve sempre tentar verificar as alterações. Isso inclui:
+    *   Rodar `npm run lint -- --max-warnings 0` para garantir que não há warnings de lint.
     *   Rodar `npm run build` para checar erros de compilação e linting.
     *   Considerar a execução de testes (se aplicável e identificado).
 3.  **Comunicação:**
@@ -19,7 +20,8 @@ Este documento descreve as preferências e o fluxo de trabalho esperado ao inter
     *   Para correções de bugs (`fix`) ou refatorações (`refactor`), as alterações podem ser aplicadas diretamente na branch atual, a menos que seja solicitado o contrário.
 2.  **Commits:**
     *   Sempre propor uma mensagem de commit clara, concisa e focada no "porquê" da mudança.
-    *   Utilizar o padrão de commit `tipo: mensagem` (ex: `feat: adiciona seção de filmes na homepage`).
+    *   Utilizar o padrão de commit `tipo: mensagem` (ex: `feat: add movies section to homepage`).
+    *   **Todas as mensagens de commit devem ser em inglês.**
     *   Garantir que todos os arquivos relevantes estejam staged antes do commit.
 3.  **Push:**
     *   **NUNCA** fazer `git push` para o repositório remoto sem a minha permissão explícita. Sempre perguntar "Gostaria de enviar essas alterações para o repositório remoto?".
