@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useEffect, useState, useRef } from "react";
@@ -53,15 +52,17 @@ export default function MoviesSection() {
 
   return (
     <div className="mt-16">
-      <h2 className="text-4xl font-bold text-white font-merriweather">Movies</h2>
+      <h2 className="text-4xl font-bold text-white font-merriweather">
+        Movies
+      </h2>
       <p className="text-xl text-gray-400 font-merriweather mt-2">
-        Come see the latest movies I&apos;ve watched and feel free to follow me on
-        Letterboxd.
+        Come see the latest movies I&apos;ve watched and feel free to follow me
+        on Letterboxd.
       </p>
-      <div className="flex items-center mt-6">
+      <div className="mt-6">
         <div
           ref={scrollContainerRef}
-          className="flex overflow-x-auto space-x-4 pb-4 scrollbar-hide"
+          className="flex items-center overflow-x-auto space-x-4 pb-4 scrollbar-hide px-2 py-3"
         >
           {isLoading
             ? Array.from({ length: 5 }).map((_, index) => (
@@ -74,10 +75,10 @@ export default function MoviesSection() {
                   <MovieCard movie={movie} />
                 </div>
               ))}
+          <Link href="/movies" className="ml-4 flex-shrink-0">
+            <ArrowRainbowRight />
+          </Link>
         </div>
-        <Link href="/movies" className="ml-4 flex-shrink-0">
-          <ArrowRainbowRight />
-        </Link>
       </div>
     </div>
   );
