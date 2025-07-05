@@ -1,1 +1,3 @@
-npm run lint -- --max-warnings 0 && npm run build
+npx lint-staged
+npm run lint -- --max-warnings 0
+npm run build
