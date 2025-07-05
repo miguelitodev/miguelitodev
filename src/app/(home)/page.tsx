@@ -2,6 +2,7 @@
 
 import { TypeAnimation } from "react-type-animation";
 import MoviesSection from "./components/MoviesSection";
+import TechnologiesSection from "./components/TechnologiesSection";
 
 export default function HomePage() {
   return (
@@ -41,6 +42,7 @@ export default function HomePage() {
         technologies. Since 2020 working with Front-end, I build responsive and
         efficient web applications while solving real-world user problems.
       </p>
+      <TechnologiesSection />
       <MoviesSection />
     </div>
   );

@@ -21,7 +21,7 @@ export default function MoviesSection() {
       try {
         const response = await fetch("/api/movies");
         const data = (await response.json()) as MoviesApiResponse;
-        setMovies(data.movies.slice(0, 5));
+        setMovies(data.movies.slice(0, 6));
       } catch (error) {
         console.error("Error fetching movies:", error);
       } finally {
@@ -52,20 +52,22 @@ export default function MoviesSection() {
 
   return (
     <div className="mt-16">
-      <h2 className="text-4xl font-bold text-white font-merriweather">
-        Movies
-      </h2>
-      <p className="text-xl text-gray-400 font-merriweather mt-2">
-        Come see the latest movies I&apos;ve watched and feel free to follow me
-        on Letterboxd.
-       </p>
+      <div className="w-full">
+        <h2 className="text-4xl font-bold text-white font-merriweather">
+          Movies
+        </h2>
+        <p className="text-xl text-gray-400 font-merriweather mt-2">
+          Come see the latest movies I&apos;ve watched and feel free to follow me
+          on Letterboxd.
+        </p>
+      </div>
       <div className="mt-6">
          <div
           ref={scrollContainerRef}
-          className="flex items-center overflow-x-auto space-x-4 pb-4 scrollbar-hide px-2 py-3"
+          className="flex items-center overflow-x-auto space-x-4 pb-4 scrollbar-hide py-3"
         >
           {isLoading
-            ? Array.from({ length: 5 }).map((_, index) => (
+            ? Array.from({ length: 6 }).map((_, index) => (
                 <div key={index} className="flex-none w-48">
                   <MovieSkeleton />
                 </div>
