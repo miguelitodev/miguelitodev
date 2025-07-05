@@ -1,1 +1,1 @@
-npm run build
+npm run lint -- --max-warnings 0 && npm run build
