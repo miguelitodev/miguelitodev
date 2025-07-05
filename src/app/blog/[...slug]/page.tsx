@@ -132,8 +132,9 @@ export default async function Page({ params }: { params: Params }) {
 						{format(post.properties.date.created_time, "MMMM dd, yyyy")}
 					</span>
 					<LikeButton
-						currentLikes={post.properties.likes?.number ?? 0}
-						postId={post.id}
+						initialLikes={post.properties.likes?.number ?? 0}
+						pageId={post.id}
+						initialLiked={false} // Você pode ajustar isso conforme necessário
 					/>
 				</div>
 			</div>

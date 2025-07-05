@@ -58,9 +58,9 @@ export default function MoviesSection() {
       <p className="text-xl text-gray-400 font-merriweather mt-2">
         Come see the latest movies I&apos;ve watched and feel free to follow me
         on Letterboxd.
-      </p>
+       </p>
       <div className="mt-6">
-        <div
+         <div
           ref={scrollContainerRef}
           className="flex items-center overflow-x-auto space-x-4 pb-4 scrollbar-hide px-2 py-3"
         >

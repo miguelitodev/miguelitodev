@@ -9,7 +9,6 @@ import { convertLetterboxdRatingToNumber } from "./utils";
 
 export const MovieCard = ({ movie }: { movie: Movie }) => {
   const numericRating = convertLetterboxdRatingToNumber(movie.rating);
-  console.log(numericRating, movie.rating);
 
   const stars = [];
   for (let i = 1; i <= 5; i++) {

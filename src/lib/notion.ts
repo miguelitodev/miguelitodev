@@ -11,10 +11,9 @@ export const notion = new Client({
   auth: process.env.NOTION_TOKEN,
 });
 
-const data = await notion.databases.retrieve({
+void notion.databases.retrieve({
   database_id: process.env.NOTION_DATABASE_ID!,
 });
-console.log(data.properties);
 
 export const fetchPages = unstable_cache(async () => {
   return notion.databases.query({
@@ -29,8 +28,6 @@ export const fetchPages = unstable_cache(async () => {
 }, ["fetchPages"]);
 
 export const fetchBySlug = unstable_cache(async (slug: string) => {
-  console.log("Slug recebido:", slug);
-
   const response = await notion.databases.query({
     database_id: process.env.NOTION_DATABASE_ID!,
     filter: {
