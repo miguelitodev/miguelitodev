@@ -1,7 +1,5 @@
 
-import Link from "next/link";
 import { ListRepositories } from "./ListRepositories";
-import { ArrowRainbowRight } from "@/assets/icons";
 
 export function RepositoriesSection() {
   return (
@@ -11,15 +9,7 @@ export function RepositoriesSection() {
         repositories
       </h2>
       <ListRepositories />
-      <div className="w-full flex justify-end">
-        <Link
-          href="/repositories"
-          className="text-white font-mono text-lg flex items-center gap-2 group"
-        >
-          see all repositories
-          <ArrowRainbowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-        </Link>
-      </div>
+      
     </div>
   );
 }

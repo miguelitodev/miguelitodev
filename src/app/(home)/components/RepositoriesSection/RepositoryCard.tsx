@@ -32,7 +32,7 @@ export function RepositoryCard({ repo }: { repo: Repository }) {
       href={repo.html_url}
       target="_blank"
       rel="noopener noreferrer"
-      className="p-6 bg-black/80 text-white rounded-lg shadow-lg transform transition duration-300 hover:scale-105 flex flex-col justify-between"
+      className="flex-shrink-0 w-80 p-6 bg-black/80 text-white rounded-lg shadow-lg transform transition duration-300 hover:scale-105 flex flex-col justify-between"
     >
       {repo.language ? (
         <div className="flex flex-row justify-between items-center w-full">
