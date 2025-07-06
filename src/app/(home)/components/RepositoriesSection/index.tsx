@@ -1,9 +1,7 @@
 
-import { Suspense } from "react";
 import Link from "next/link";
 import { ListRepositories } from "./ListRepositories";
 import { ArrowRainbowRight } from "@/assets/icons";
-import { Loading } from "./loading";
 
 export function RepositoriesSection() {
   return (
@@ -12,9 +10,7 @@ export function RepositoriesSection() {
         <span className="font-mono text-sm">miguelito.dev/</span>
         repositories
       </h2>
-      <Suspense fallback={<Loading />}>
-        <ListRepositories />
-      </Suspense>
+      <ListRepositories />
       <div className="w-full flex justify-end">
         <Link
           href="/repositories"
