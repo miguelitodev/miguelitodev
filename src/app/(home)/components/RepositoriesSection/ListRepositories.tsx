@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { Repository } from "@/types";
 import { RepositoryCard } from "./RepositoryCard";
@@ -14,6 +14,7 @@ export function ListRepositories() {
   const [repos, setRepos] = useState<Repository[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const fetchRepos = async () => {
@@ -29,6 +30,24 @@ export function ListRepositories() {
     };
 
     void fetchRepos();
+
+    const handleWheel = (event: WheelEvent) => {
+      if (scrollContainerRef.current) {
+        event.preventDefault();
+        scrollContainerRef.current.scrollLeft += event.deltaY;
+      }
+    };
+
+    const currentRef = scrollContainerRef.current;
+    if (currentRef) {
+      currentRef.addEventListener("wheel", handleWheel, { passive: false });
+    }
+
+    return () => {
+      if (currentRef) {
+        currentRef.removeEventListener("wheel", handleWheel);
+      }
+    };
   }, []);
 
   if (isLoading) {
@@ -40,19 +59,20 @@ export function ListRepositories() {
   }
 
   return (
-    <div className="flex overflow-x-auto space-x-4 py-4 scrollbar-hide mb-8">
-      {repos.map((repo) => (
-        <RepositoryCard key={repo.id} repo={repo} />
-      ))}
-      <Link
-        href="/repositories"
-        className="flex-shrink-0 w-48 bg-black/80 rounded-lg flex items-center justify-center text-white font-mono text-lg group transform transition duration-300 hover:scale-105"
+    <div className="mt-6">
+      <div
+        ref={scrollContainerRef}
+        className="flex items-center overflow-x-auto space-x-4 pb-4 scrollbar-hide py-3 border border-red-500"
       >
-        <div className="flex items-center gap-2">
-          Ver todos
-          <ArrowRainbowRight className="w-8 h-8 group-hover:translate-x-1 transition-transform" />
-        </div>
-      </Link>
+        {repos.map((repo) => (
+          <div key={repo.id} className="flex-none w-[500px]">
+            <RepositoryCard repo={repo} />
+          </div>
+        ))}
+        <Link href="/repositories" className="ml-4 flex-shrink-0">
+          <ArrowRainbowRight />
+        </Link>
+      </div>
     </div>
   );
 }
