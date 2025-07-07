@@ -30,7 +30,9 @@ export function ListRepositories() {
     };
 
     void fetchRepos();
+  }, []);
 
+  useEffect(() => {
     const handleWheel = (event: WheelEvent) => {
       if (scrollContainerRef.current) {
         event.preventDefault();
@@ -48,7 +50,7 @@ export function ListRepositories() {
         currentRef.removeEventListener("wheel", handleWheel);
       }
     };
-  }, []);
+  }, [repos]);
 
   if (isLoading) {
     return <Loading />;
@@ -62,10 +64,10 @@ export function ListRepositories() {
     <div className="mt-6">
       <div
         ref={scrollContainerRef}
-        className="flex items-center overflow-x-auto space-x-4 pb-4 scrollbar-hide py-3 border border-red-500"
+        className="flex items-center overflow-x-auto space-x-4 pb-4 scrollbar-hide py-3"
       >
         {repos.map((repo) => (
-          <div key={repo.id} className="flex-none w-[500px]">
+          <div key={repo.id} className="flex-none w-[400px]">
             <RepositoryCard repo={repo} />
           </div>
         ))}
