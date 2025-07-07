@@ -53,7 +53,7 @@ export function ClientWrapper({ children }: { children: React.ReactNode }) {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.6, ease: "easeInOut" }}
-                  className="flex-1"
+                  className="w-full"
                 >
                   {children}
                 </motion.div>

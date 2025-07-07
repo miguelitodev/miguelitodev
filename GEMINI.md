@@ -33,6 +33,7 @@ This document outlines the preferences and expected workflow when interacting wi
 *   **UI/UX:**
     *   **Horizontal Scroll:** For horizontal lists that may exceed the screen width, prefer a horizontal scroll with a hidden scrollbar (using `tailwind-scrollbar-hide` or similar).
     *   **Mouse Wheel Scrolling:** Enable horizontal scrolling with the mouse wheel when hovering over the relevant section.
+    *   **Scroll Behavior:** For horizontal scrollable sections, ensure smooth scrolling behavior and, if applicable, implement mouse wheel scrolling for enhanced user experience.
     *   **Skeleton Loaders:** Use skeleton loaders to indicate that content is being loaded, especially in sections that depend on asynchronous requests.
     *   **Style:** Maintain consistency with the existing code style and conventions in the project (fonts, sizes, responsiveness, etc.).
 

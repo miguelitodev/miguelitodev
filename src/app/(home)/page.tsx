@@ -2,6 +2,7 @@
 
 import { TypeAnimation } from "react-type-animation";
 import MoviesSection from "./components/MoviesSection";
+import { RepositoriesSection } from "./components/RepositoriesSection";
 import TechnologiesSection from "./components/TechnologiesSection";
 
 export default function HomePage() {
@@ -44,6 +45,7 @@ export default function HomePage() {
       </p>
       <TechnologiesSection />
       <MoviesSection />
+      <RepositoriesSection />
     </div>
   );
 }
