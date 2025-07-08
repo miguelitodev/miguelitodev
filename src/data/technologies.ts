@@ -13,6 +13,7 @@ export type TechnologyCategory = (typeof TECHNOLOGY_CATEGORIES)[number];
 
 export interface Technology {
   technology: string;
+  icon: string;
   years: string;
   experienceLevel: number;
   url: string;
@@ -44,6 +45,7 @@ export const categoryOrder: TechnologyCategory[] = [
 export const technologies: Technology[] = [
   {
     technology: "React",
+    icon: "siReact",
     years: "4 y",
     experienceLevel: 100,
     url: "https://reactjs.org/",
@@ -51,6 +53,7 @@ export const technologies: Technology[] = [
   },
   {
     technology: "JavaScript (ES6+)",
+    icon: "siJavascript",
     years: "5 y",
     experienceLevel: 100,
     url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
@@ -58,6 +61,7 @@ export const technologies: Technology[] = [
   },
   {
     technology: "TypeScript",
+    icon: "siTypescript",
     years: "3 y",
     experienceLevel: 70,
     url: "https://www.typescriptlang.org/",
@@ -65,6 +69,7 @@ export const technologies: Technology[] = [
   },
   {
     technology: "Next.js",
+    icon: "siNextdotjs",
     years: "3 y",
     experienceLevel: 70,
     url: "https://nextjs.org/",
@@ -72,6 +77,7 @@ export const technologies: Technology[] = [
   },
   {
     technology: "Node.js",
+    icon: "siNodedotjs",
     years: "2 y",
     experienceLevel: 50,
     url: "https://nodejs.org/",
@@ -79,6 +85,7 @@ export const technologies: Technology[] = [
   },
   {
     technology: "Express.js",
+    icon: "siExpress",
     years: "1 y",
     experienceLevel: 40,
     url: "https://expressjs.com/",
@@ -86,6 +93,7 @@ export const technologies: Technology[] = [
   },
   {
     technology: "React Native",
+    icon: "siReact",
     years: "1 y",
     experienceLevel: 40,
     url: "https://reactnative.dev/",
@@ -93,6 +101,7 @@ export const technologies: Technology[] = [
   },
   {
     technology: "HTML5",
+    icon: "siHtml5",
     years: "5 y",
     experienceLevel: 100,
     url: "https://developer.mozilla.org/en-US/docs/Web/HTML",
@@ -100,6 +109,7 @@ export const technologies: Technology[] = [
   },
   {
     technology: "CSS3",
+    icon: "siCss3",
     years: "5 y",
     experienceLevel: 85,
     url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
@@ -107,6 +117,7 @@ export const technologies: Technology[] = [
   },
   {
     technology: "SCSS/SASS",
+    icon: "siSass",
     years: "2 y",
     experienceLevel: 60,
     url: "https://sass-lang.com/",
@@ -114,6 +125,7 @@ export const technologies: Technology[] = [
   },
   {
     technology: "Tailwind CSS",
+    icon: "siTailwindcss",
     years: "3 y",
     experienceLevel: 70,
     url: "https://tailwindcss.com/",
@@ -121,6 +133,7 @@ export const technologies: Technology[] = [
   },
   {
     technology: "Bootstrap",
+    icon: "siBootstrap",
     years: "2 y",
     experienceLevel: 60,
     url: "https://getbootstrap.com/",
@@ -128,6 +141,7 @@ export const technologies: Technology[] = [
   },
   {
     technology: "Git/GitHub",
+    icon: "siGithub",
     years: "5 y",
     experienceLevel: 80,
     url: "https://git-scm.com/",
@@ -135,6 +149,7 @@ export const technologies: Technology[] = [
   },
   {
     technology: "API REST",
+    icon: "siSwagger",
     years: "3 y",
     experienceLevel: 75,
     url: "https://restfulapi.net/",
@@ -142,6 +157,7 @@ export const technologies: Technology[] = [
   },
   {
     technology: "GraphQL",
+    icon: "siGraphql",
     years: "0 y",
     experienceLevel: 30,
     url: "https://graphql.org/",
@@ -149,6 +165,7 @@ export const technologies: Technology[] = [
   },
   {
     technology: "Firebase",
+    icon: "siFirebase",
     years: "0 y",
     experienceLevel: 10,
     url: "https://firebase.google.com/",
@@ -156,6 +173,7 @@ export const technologies: Technology[] = [
   },
   {
     technology: "SQL (MySQL/PostgreSQL)",
+    icon: "siMysql",
     years: "0 y",
     experienceLevel: 20,
     url: "https://www.mysql.com/",
@@ -163,6 +181,7 @@ export const technologies: Technology[] = [
   },
   {
     technology: "NoSQL (MongoDB)",
+    icon: "siMongodb",
     years: "0 y",
     experienceLevel: 10,
     url: "https://www.mongodb.com/",
@@ -170,6 +189,7 @@ export const technologies: Technology[] = [
   },
   {
     technology: "Framer Motion",
+    icon: "siFramer",
     years: "1 y",
     experienceLevel: 30,
     url: "https://www.framer.com/motion/",
@@ -177,6 +197,7 @@ export const technologies: Technology[] = [
   },
   {
     technology: "Jest & Testing Library",
+    icon: "siJest",
     years: "2 y",
     experienceLevel: 40,
     url: "https://jestjs.io/",
@@ -184,6 +205,7 @@ export const technologies: Technology[] = [
   },
   {
     technology: "Vite",
+    icon: "siVite",
     years: "2 y",
     experienceLevel: 50,
     url: "https://vitejs.dev/",
@@ -191,6 +213,7 @@ export const technologies: Technology[] = [
   },
   {
     technology: "Zod",
+    icon: "siZod",
     years: "0 y",
     experienceLevel: 40,
     url: "https://zod.dev/",
@@ -198,6 +221,7 @@ export const technologies: Technology[] = [
   },
   {
     technology: "React Hook Form",
+    icon: "siReacthookform",
     years: "2 y",
     experienceLevel: 60,
     url: "https://react-hook-form.com/",
@@ -205,6 +229,7 @@ export const technologies: Technology[] = [
   },
   {
     technology: "Sonner",
+    icon: "siSonarsource",
     years: "1 y",
     experienceLevel: 100,
     url: "https://sonner.emilkowal.ski/",
@@ -212,6 +237,7 @@ export const technologies: Technology[] = [
   },
   {
     technology: "React Icons",
+    icon: "siReact",
     years: "2 y",
     experienceLevel: 100,
     url: "https://react-icons.github.io/react-icons/",
@@ -219,6 +245,7 @@ export const technologies: Technology[] = [
   },
   {
     technology: "@emotion/react",
+    icon: "siEmotion",
     years: "1 y",
     experienceLevel: 40,
     url: "https://emotion.sh/docs/introduction",
@@ -226,6 +253,7 @@ export const technologies: Technology[] = [
   },
   {
     technology: "@emotion/styled",
+    icon: "siEmotion",
     years: "1 y",
     experienceLevel: 40,
     url: "https://emotion.sh/docs/styled",
@@ -233,6 +261,7 @@ export const technologies: Technology[] = [
   },
   {
     technology: "@mui/material",
+    icon: "siMui",
     years: "1 y",
     experienceLevel: 60,
     url: "https://mui.com/material-ui/",
@@ -240,6 +269,7 @@ export const technologies: Technology[] = [
   },
   {
     technology: "date-fns",
+    icon: "siDatefns",
     years: "3 y",
     experienceLevel: 50,
     url: "https://date-fns.org/",
@@ -247,6 +277,7 @@ export const technologies: Technology[] = [
   },
   {
     technology: "react-rewards",
+    icon: "siReact",
     years: "1 y",
     experienceLevel: 80,
     url: "https://www.npmjs.com/package/react-rewards",
@@ -254,6 +285,7 @@ export const technologies: Technology[] = [
   },
   {
     technology: "ESLint",
+    icon: "siEslint",
     years: "3 y",
     experienceLevel: 60,
     url: "https://eslint.org/",
@@ -261,6 +293,7 @@ export const technologies: Technology[] = [
   },
   {
     technology: "Prettier",
+    icon: "siPrettier",
     years: "3 y",
     experienceLevel: 60,
     url: "https://prettier.io/",
@@ -268,6 +301,7 @@ export const technologies: Technology[] = [
   },
   {
     technology: "PNPM",
+    icon: "siPnpm",
     years: "1 y",
     experienceLevel: 50,
     url: "https://pnpm.io/",
@@ -275,6 +309,7 @@ export const technologies: Technology[] = [
   },
   {
     technology: "Styled Components",
+    icon: "siStyledcomponents",
     years: "4 y",
     experienceLevel: 100,
     url: "https://styled-components.com/",

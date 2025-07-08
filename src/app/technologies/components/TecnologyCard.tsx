@@ -1,7 +1,9 @@
+import { getTechIcon } from "@/utils/getTechIcon";
 import { motion } from "framer-motion";
 
 interface TecnologyCardProps {
   technology: string;
+  icon: string;
   years: string; // Mantido como string
   experienceLevel: number;
   url: string;
@@ -10,11 +12,14 @@ interface TecnologyCardProps {
 
 const TecnologyCard: React.FC<TecnologyCardProps> = ({
   technology,
+  icon,
   years,
   experienceLevel,
   url,
   gradient,
 }) => {
+  const iconSvg = getTechIcon(icon);
+
   return (
     <motion.a
       href={url}
@@ -34,6 +39,8 @@ const TecnologyCard: React.FC<TecnologyCardProps> = ({
         }}
       ></div>
       <div className="relative z-10 flex flex-row items-center justify-between gap-4">
+        {/* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */}
+        <div dangerouslySetInnerHTML={{ __html: iconSvg }} className="w-8 h-8" />
         <h4 className="text-center text-white text-base font-semibold max-sm:text-sm">
           {technology}
         </h4>

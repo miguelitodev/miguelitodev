@@ -1,6 +1,6 @@
 "use client";
 
-import TecnologyCard from "./components/TecnologyCard";
+import TecnologyCard from "@/app/technologies/components/TecnologyCard";
 import { groupedTechnologies, technologiesCategoryColors } from "@/data";
 
 export default function Technologies() {
@@ -39,6 +39,7 @@ export default function Technologies() {
                       .map((tech) => (
                         <TecnologyCard
                           key={tech.technology}
+                          icon={tech.icon}
                           experienceLevel={tech.experienceLevel}
                           years={tech.years}
                           technology={tech.technology}
