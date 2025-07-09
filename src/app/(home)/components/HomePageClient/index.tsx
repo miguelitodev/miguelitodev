@@ -3,10 +3,8 @@
 import { TypeAnimation } from "react-type-animation";
 import { CurrentExperienceSection } from "@/components/home/CurrentExperienceSection";
 import { RepositoriesSection } from "@/components/home/RepositoriesSection";
-import TechnologiesSectionWrapper from "@/components/home/TechnologiesSectionWrapper";
-import dynamic from "next/dynamic";
-
-const MoviesSection = dynamic(() => import("@/components/home/MoviesSection"), { ssr: false });
+import TechnologiesSectionWrapper from "../TechnologiesSectionWrapper";
+import MoviesSectionWrapper from "../MoviesSectionWrapper";
 
 export default function HomePageClient() {
   return (

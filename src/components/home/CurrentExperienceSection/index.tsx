@@ -4,7 +4,7 @@ export function CurrentExperienceSection() {
   const currentExperience = experiences[0];
 
   return (
-    <div className="flex flex-col w-4/6 mx-auto max-sm:w-full my-16">
+    <div className="flex flex-col w-full my-16">
       <h2 className="text-white text-4xl font-bold font-merriweather mb-8">
         Current Experience
       </h2>
