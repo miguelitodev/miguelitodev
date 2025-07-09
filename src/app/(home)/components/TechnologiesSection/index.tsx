@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
-import { technologies, technologiesCategoryColors } from "@/data/technologies";
+import { technologies } from "@/data/technologies";
 import TecnologyCard from "@/app/technologies/components/TecnologyCard";
 import { ArrowRainbowRight } from "@/assets/icons";
 
@@ -56,7 +56,7 @@ export default function TechnologiesSection() {
             <div key={tech.technology} className="flex-none">
               <TecnologyCard
                 {...tech}
-                gradient={technologiesCategoryColors[tech.category]}
+                color={tech.color}
               />
             </div>
           ))}

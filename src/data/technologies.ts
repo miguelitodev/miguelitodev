@@ -13,7 +13,6 @@ export type TechnologyCategory = (typeof TECHNOLOGY_CATEGORIES)[number];
 
 export interface Technology {
   technology: string;
-  icon: string;
   years: string;
   experienceLevel: number;
   url: string;
@@ -50,6 +49,7 @@ export const technologies: Technology[] = [
     experienceLevel: 100,
     url: "https://reactjs.org/",
     category: "Frontend",
+    color: "#61dafb",
   },
   {
     technology: "JavaScript (ES6+)",
@@ -58,6 +58,7 @@ export const technologies: Technology[] = [
     experienceLevel: 100,
     url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     category: "Frontend",
+    color: "#F0DB4F",
   },
   {
     technology: "TypeScript",
@@ -66,6 +67,7 @@ export const technologies: Technology[] = [
     experienceLevel: 70,
     url: "https://www.typescriptlang.org/",
     category: "Frontend",
+    color: "#3178c6",
   },
   {
     technology: "Next.js",
@@ -74,6 +76,7 @@ export const technologies: Technology[] = [
     experienceLevel: 70,
     url: "https://nextjs.org/",
     category: "Frontend",
+    color: "#000000",
   },
   {
     technology: "Node.js",
@@ -82,6 +85,7 @@ export const technologies: Technology[] = [
     experienceLevel: 50,
     url: "https://nodejs.org/",
     category: "Backend",
+    color: "#339933",
   },
   {
     technology: "Express.js",
@@ -90,6 +94,7 @@ export const technologies: Technology[] = [
     experienceLevel: 40,
     url: "https://expressjs.com/",
     category: "Backend",
+    color: "#000000",
   },
   {
     technology: "React Native",
@@ -98,6 +103,7 @@ export const technologies: Technology[] = [
     experienceLevel: 40,
     url: "https://reactnative.dev/",
     category: "Mobile",
+    color: "#61dafb",
   },
   {
     technology: "HTML5",
@@ -106,6 +112,7 @@ export const technologies: Technology[] = [
     experienceLevel: 100,
     url: "https://developer.mozilla.org/en-US/docs/Web/HTML",
     category: "Frontend",
+    color: "#E34F26",
   },
   {
     technology: "CSS3",
@@ -114,6 +121,7 @@ export const technologies: Technology[] = [
     experienceLevel: 85,
     url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
     category: "Frontend",
+    color: "#1572B6",
   },
   {
     technology: "SCSS/SASS",
@@ -122,6 +130,7 @@ export const technologies: Technology[] = [
     experienceLevel: 60,
     url: "https://sass-lang.com/",
     category: "Frontend",
+    color: "#CC6699",
   },
   {
     technology: "Tailwind CSS",
@@ -130,6 +139,7 @@ export const technologies: Technology[] = [
     experienceLevel: 70,
     url: "https://tailwindcss.com/",
     category: "Frontend",
+    color: "#06B6D4",
   },
   {
     technology: "Bootstrap",
@@ -138,6 +148,7 @@ export const technologies: Technology[] = [
     experienceLevel: 60,
     url: "https://getbootstrap.com/",
     category: "Frontend",
+    color: "#7952B3",
   },
   {
     technology: "Git/GitHub",
@@ -146,6 +157,7 @@ export const technologies: Technology[] = [
     experienceLevel: 80,
     url: "https://git-scm.com/",
     category: "Tools",
+    color: "#181717",
   },
   {
     technology: "API REST",
@@ -154,6 +166,7 @@ export const technologies: Technology[] = [
     experienceLevel: 75,
     url: "https://restfulapi.net/",
     category: "Backend",
+    color: "#007BFF",
   },
   {
     technology: "GraphQL",
@@ -162,6 +175,7 @@ export const technologies: Technology[] = [
     experienceLevel: 30,
     url: "https://graphql.org/",
     category: "Backend",
+    color: "#E10098",
   },
   {
     technology: "Firebase",
@@ -170,6 +184,7 @@ export const technologies: Technology[] = [
     experienceLevel: 10,
     url: "https://firebase.google.com/",
     category: "Databases",
+    color: "#FFCA28",
   },
   {
     technology: "SQL (MySQL/PostgreSQL)",
@@ -178,6 +193,7 @@ export const technologies: Technology[] = [
     experienceLevel: 20,
     url: "https://www.mysql.com/",
     category: "Databases",
+    color: "#4479A1",
   },
   {
     technology: "NoSQL (MongoDB)",
@@ -186,6 +202,7 @@ export const technologies: Technology[] = [
     experienceLevel: 10,
     url: "https://www.mongodb.com/",
     category: "Databases",
+    color: "#47A248",
   },
   {
     technology: "Framer Motion",
@@ -194,6 +211,7 @@ export const technologies: Technology[] = [
     experienceLevel: 30,
     url: "https://www.framer.com/motion/",
     category: "Frontend",
+    color: "#0055FF",
   },
   {
     technology: "Jest & Testing Library",
@@ -202,6 +220,7 @@ export const technologies: Technology[] = [
     experienceLevel: 40,
     url: "https://jestjs.io/",
     category: "Testing",
+    color: "#C21325",
   },
   {
     technology: "Vite",
@@ -210,6 +229,7 @@ export const technologies: Technology[] = [
     experienceLevel: 50,
     url: "https://vitejs.dev/",
     category: "Tools",
+    color: "#646CFF",
   },
   {
     technology: "Zod",
@@ -218,6 +238,7 @@ export const technologies: Technology[] = [
     experienceLevel: 40,
     url: "https://zod.dev/",
     category: "Libraries",
+    color: "#3E6F9E",
   },
   {
     technology: "React Hook Form",
@@ -226,6 +247,7 @@ export const technologies: Technology[] = [
     experienceLevel: 60,
     url: "https://react-hook-form.com/",
     category: "Libraries",
+    color: "#EC5990",
   },
   {
     technology: "Sonner",
@@ -234,6 +256,7 @@ export const technologies: Technology[] = [
     experienceLevel: 100,
     url: "https://sonner.emilkowal.ski/",
     category: "Libraries",
+    color: "#000000",
   },
   {
     technology: "React Icons",
@@ -242,6 +265,7 @@ export const technologies: Technology[] = [
     experienceLevel: 100,
     url: "https://react-icons.github.io/react-icons/",
     category: "Libraries",
+    color: "#E91E63",
   },
   {
     technology: "@emotion/react",
@@ -250,6 +274,7 @@ export const technologies: Technology[] = [
     experienceLevel: 40,
     url: "https://emotion.sh/docs/introduction",
     category: "Styling",
+    color: "#D70094",
   },
   {
     technology: "@emotion/styled",
@@ -258,6 +283,7 @@ export const technologies: Technology[] = [
     experienceLevel: 40,
     url: "https://emotion.sh/docs/styled",
     category: "Styling",
+    color: "#D70094",
   },
   {
     technology: "@mui/material",
@@ -266,6 +292,7 @@ export const technologies: Technology[] = [
     experienceLevel: 60,
     url: "https://mui.com/material-ui/",
     category: "Styling",
+    color: "#007FFF",
   },
   {
     technology: "date-fns",
@@ -274,6 +301,7 @@ export const technologies: Technology[] = [
     experienceLevel: 50,
     url: "https://date-fns.org/",
     category: "Libraries",
+    color: "#5A352A",
   },
   {
     technology: "react-rewards",
@@ -282,6 +310,7 @@ export const technologies: Technology[] = [
     experienceLevel: 80,
     url: "https://www.npmjs.com/package/react-rewards",
     category: "Libraries",
+    color: "#FFC107",
   },
   {
     technology: "ESLint",
@@ -290,6 +319,7 @@ export const technologies: Technology[] = [
     experienceLevel: 60,
     url: "https://eslint.org/",
     category: "Tools",
+    color: "#4B32C3",
   },
   {
     technology: "Prettier",
@@ -298,6 +328,7 @@ export const technologies: Technology[] = [
     experienceLevel: 60,
     url: "https://prettier.io/",
     category: "Tools",
+    color: "#F7B93E",
   },
   {
     technology: "PNPM",
@@ -306,6 +337,7 @@ export const technologies: Technology[] = [
     experienceLevel: 50,
     url: "https://pnpm.io/",
     category: "Tools",
+    color: "#F69220",
   },
   {
     technology: "Styled Components",
@@ -314,6 +346,7 @@ export const technologies: Technology[] = [
     experienceLevel: 100,
     url: "https://styled-components.com/",
     category: "Styling",
+    color: "#DB7093",
   },
 ] satisfies Technology[];
 

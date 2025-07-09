@@ -1,24 +1,17 @@
-import { getTechIcon } from "@/utils/getTechIcon";
+
 import { motion } from "framer-motion";
 
 interface TecnologyCardProps {
   technology: string;
-  icon: string;
-  years: string; // Mantido como string
-  experienceLevel: number;
+  years: string;
   url: string;
-  gradient: string; // Gradiente da categoria
 }
 
 const TecnologyCard: React.FC<TecnologyCardProps> = ({
   technology,
-  icon,
   years,
-  experienceLevel,
   url,
-  gradient,
 }) => {
-  const iconSvg = getTechIcon(icon);
 
   return (
     <motion.a
@@ -31,21 +24,12 @@ const TecnologyCard: React.FC<TecnologyCardProps> = ({
       whileTap={{ scale: 0.95 }}
       transition={{ type: "spring", stiffness: 300, damping: 30 }}
     >
-      <div
-        className="absolute bottom-0 left-0 h-1 rounded-full"
-        style={{
-          width: `${experienceLevel}%`,
-          background: `linear-gradient(to right, ${gradient})`,
-        }}
-      ></div>
       <div className="relative z-10 flex flex-row items-center justify-between gap-4">
-        {/* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */}
-        <div dangerouslySetInnerHTML={{ __html: iconSvg }} className="w-8 h-8" />
         <h4 className="text-center text-white text-base font-semibold max-sm:text-sm">
           {technology}
         </h4>
         <p className="text-slate-300 leading-normal font-light text-xs max-sm:text-xs">
-          {years} {/* Exibe diretamente o campo years */}
+          {years}
         </p>
       </div>
     </motion.a>

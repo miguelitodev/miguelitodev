@@ -1,7 +1,7 @@
 "use client";
 
 import TecnologyCard from "@/app/technologies/components/TecnologyCard";
-import { groupedTechnologies, technologiesCategoryColors } from "@/data";
+import { groupedTechnologies } from "@/data";
 
 export default function Technologies() {
   return (
@@ -40,11 +40,10 @@ export default function Technologies() {
                         <TecnologyCard
                           key={tech.technology}
                           icon={tech.icon}
-                          experienceLevel={tech.experienceLevel}
                           years={tech.years}
                           technology={tech.technology}
                           url={tech.url}
-                          gradient={technologiesCategoryColors[tech.category]}
+                          color={tech.color}
                         />
                       ))}
                   </div>
