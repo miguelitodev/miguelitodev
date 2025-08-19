@@ -1,37 +1,37 @@
-"use client";
+'use client';
 
-import { TypeAnimation } from "react-type-animation";
-import { CurrentExperienceSection } from "@/components/home/CurrentExperienceSection";
-import { RepositoriesSection } from "@/components/home/RepositoriesSection";
-import TechnologiesSectionWrapper from "../TechnologiesSectionWrapper";
-import MoviesSectionWrapper from "../MoviesSectionWrapper";
+import { TypeAnimation } from 'react-type-animation';
+import { CurrentExperienceSection } from '@/components/home/CurrentExperienceSection';
+import { RepositoriesSection } from '@/components/home/RepositoriesSection';
+import TechnologiesSectionWrapper from '../TechnologiesSectionWrapper';
+import MoviesSectionWrapper from '../MoviesSectionWrapper';
 
 export default function HomePageClient() {
   return (
     <div className="w-3/5 max-md:w-full max-lg:w-4/5 mx-auto">
       <h1 className="text-white text-5xl max-xl:text-4xl max-md:text-2xl font-bold font-merriweather max-md:mb-4 mb-4">
-        Hi, I&apos;m{" "}
+        Hi, I&apos;m{' '}
         <span className="font-bold leading-loose  font-merriweather lg:leading-normal tracking-wider text-center bg-clip-text text-transparent bg-[linear-gradient(to_right,theme(colors.indigo.400),theme(colors.indigo.100),theme(colors.sky.400),theme(colors.fuchsia.400),theme(colors.sky.400),theme(colors.indigo.100),theme(colors.indigo.400))] bg-[length:200%_auto] animate-gradient">
           Miguel Riquelme
-        </span>{" "}
+        </span>{' '}
         <span className="font-mono text-sm text-white">
-          and I am{" "}
+          and I am{' '}
           <TypeAnimation
             sequence={[
-              "Mid-level developer",
+              'Mid-level developer',
               1000,
-              "",
-              "Front-end developer",
+              '',
+              'Front-end developer',
               1000,
-              "",
+              '',
               1000,
-              "Designer",
+              'Designer',
               1000,
-              "",
-              "Mobile developer",
+              '',
+              'Mobile developer',
               1000,
             ]}
-            style={{ fontFamily: "Roboto mono" }}
+            style={{ fontFamily: 'Roboto mono' }}
             wrapper="span"
             speed={70}
             repeat={Infinity}
@@ -44,10 +44,10 @@ export default function HomePageClient() {
         technologies. Since 2020 working with Front-end, I build responsive and
         efficient web applications while solving real-world user problems.
       </p>
-      <TechnologiesSectionWrapper />
       <CurrentExperienceSection />
-      <MoviesSectionWrapper />
+      <TechnologiesSectionWrapper />
       <RepositoriesSection />
+      <MoviesSectionWrapper />
     </div>
   );
 }

@@ -1,18 +1,18 @@
-"use client";
+'use client';
 
-import { useEffect, useRef } from "react";
-import Link from "next/link";
-import { technologies, technologiesCategoryColors } from "@/data/technologies";
-import TecnologyCard from "@/app/technologies/components/TecnologyCard";
-import { ArrowRainbowRight } from "@/assets/icons";
+import { useEffect, useRef } from 'react';
+import Link from 'next/link';
+import { technologies } from '@/data/technologies';
+import TecnologyCard from '@/app/technologies/components/TecnologyCard';
+import { ArrowRainbowRight } from '@/assets/icons';
 
 export default function TechnologiesSection() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const mainTechnologies = technologies
     .sort((a, b) => {
-      const yearsA = parseFloat(a.years.split(" ")[0]);
-      const yearsB = parseFloat(b.years.split(" ")[0]);
+      const yearsA = parseFloat(a.years.split(' ')[0]);
+      const yearsB = parseFloat(b.years.split(' ')[0]);
       return yearsB - yearsA;
     })
     .slice(0, 10);
@@ -27,12 +27,12 @@ export default function TechnologiesSection() {
 
     const currentRef = scrollContainerRef.current;
     if (currentRef) {
-      currentRef.addEventListener("wheel", handleWheel, { passive: false });
+      currentRef.addEventListener('wheel', handleWheel, { passive: false });
     }
 
     return () => {
       if (currentRef) {
-        currentRef.removeEventListener("wheel", handleWheel);
+        currentRef.removeEventListener('wheel', handleWheel);
       }
     };
   }, []);
@@ -54,10 +54,7 @@ export default function TechnologiesSection() {
         >
           {mainTechnologies.map((tech) => (
             <div key={tech.technology} className="flex-none">
-              <TecnologyCard
-                {...tech}
-                gradient={technologiesCategoryColors[tech.category]}
-              />
+              <TecnologyCard {...tech} />
             </div>
           ))}
           <Link href="/technologies" className="ml-4 flex-shrink-0 self-center">

@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import TecnologyCard from "@/app/technologies/components/TecnologyCard";
-import { groupedTechnologies } from "@/data";
+import TecnologyCard from '@/app/technologies/components/TecnologyCard';
+import { groupedTechnologies } from '@/data';
 
 export default function Technologies() {
   return (
@@ -39,11 +39,9 @@ export default function Technologies() {
                       .map((tech) => (
                         <TecnologyCard
                           key={tech.technology}
-                          icon={tech.icon}
                           years={tech.years}
                           technology={tech.technology}
                           url={tech.url}
-                          color={tech.color}
                         />
                       ))}
                   </div>
