@@ -1,5 +1,4 @@
-
-import { ListRepositories } from "./ListRepositories";
+import { ListRepositories } from './ListRepositories';
 
 export function RepositoriesSection() {
   return (
@@ -9,7 +8,6 @@ export function RepositoriesSection() {
       </h2>
       <p className="text-gray-400 mb-8">My latest repositories on GitHub.</p>
       <ListRepositories />
-      
     </div>
   );
 }
