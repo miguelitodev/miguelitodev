@@ -1,0 +1,31 @@
+name: Deploy via Release
+
+on:
+  release:
+    types: [created]
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node (se precisar)
+        uses: actions/setup-node@v3
+        with:
+          node-version: "22"
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel
+
+      - name: Deploy to Vercel
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: vercel --prod --token $VERCEL_TOKEN --org $VERCEL_ORG_ID --project $VERCEL_PROJECT_ID
