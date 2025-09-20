@@ -261,7 +261,7 @@ export function Hero() {
             that make me feel alive and a little closer to the edge.
           </motion.span>
           <motion.div
-            className="mt-8 relative overflow-hidden rounded-lg"
+            className="mt-8 relative overflow-hidden"
             style={{ width: "300px", height: `${imageHeight}px` }}
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -362,7 +362,7 @@ export function Hero() {
           >
             Stack
           </motion.span>
-          <ul className="flex flex-col gap-2 mb-16">
+          <ul className="flex flex-col gap-2">
             {[
               {
                 name: "HTML5",

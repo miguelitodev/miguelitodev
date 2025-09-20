@@ -114,3 +114,37 @@ A fluidez é a chave. As animações devem ser sutis e elegantes.
 - **Deployment:**
   - **Vercel:** Integração perfeita com Next.js.
   - **Netlify:** Ótima opção para projetos estáticos e Jamstack.
+
+## Implementações Específicas do Projeto
+
+### Seção de Playlists do Spotify
+- Exibe playlists do usuário do Spotify com capa, nome e número de faixas
+- Efeito de hover com inversão de cores (fundo preto, texto branco)
+- Capas das playlists em preto e branco por padrão, volta a cor no hover
+- Botão para expandir/recolher mais playlists
+- Link para o perfil completo no Spotify
+
+### Seção de Filmes do Letterboxd
+- Exibe os últimos filmes assistidos do usuário no Letterboxd
+- Layout horizontal com scroll
+- Capas dos filmes em preto e branco por padrão, volta a cor no hover
+- Efeito de hover com sobreposição de informações (título, ano, avaliação)
+- Link para o perfil completo no Letterboxd
+
+### Efeitos Visuais
+- Filtros preto e branco em todas as imagens de mídia (playlists e filmes)
+- Transições suaves de 300ms para todos os efeitos de hover
+- Efeitos de scale nas imagens ao passar o mouse
+- Inversão de cores em elementos interativos ao passar o mouse
+
+## Qwen Added Memories
+- O usuário deseja que comandos e padrões importantes sejam registrados no arquivo QWEN.md.
+- Implementações importantes no portfólio:
+1. Seção de playlists do Spotify com efeito de hover de inversão de cores (fundo preto, texto branco)
+2. Filtro preto e branco nas capas das playlists que volta a cor no hover
+3. Botão para expandir/recolher mais playlists
+4. Seção de filmes do Letterboxd com layout horizontal e scroll
+5. Filtro preto e branco nas capas dos filmes que volta a cor no hover
+6. Efeitos de hover com sobreposição de informações nos filmes
+7. Transições suaves de 300ms em todos os efeitos
+8. Efeitos de scale nas imagens ao passar o mouse

@@ -232,3 +232,23 @@ body {
     transform: translateX(100%) translateY(100%) rotate(30deg);
   }
 }
+
+/* Hide scrollbar for playlist container */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
+
+/* Custom scrollbar styling (hidden but functional) */
+.overflow-x-auto {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.overflow-x-auto::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
