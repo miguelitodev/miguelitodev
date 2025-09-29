@@ -33,6 +33,13 @@ export function Header() {
     };
   }, [lastScrollY]);
 
+  const handleContactClick = () => {
+    const contactElement = document.getElementById("contact");
+    if (contactElement) {
+      contactElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 transition-transform duration-300 ease-in-out z-40 ${
@@ -54,21 +61,15 @@ export function Header() {
           >
             About
           </Link>
-          <a
-            href="#projects"
-            className="text-xs font-medium text-black hover:text-neutral-600 transition-colors"
-          >
-            Projects
-          </a>
-          <a
-            href="#capabilities"
+          <Link
+            href="/capabilities"
             className="text-xs font-medium text-black hover:text-neutral-600 transition-colors"
           >
             Capabilities
-          </a>
+          </Link>
           <a
-            href="#contact"
-            className="text-xs font-medium text-black hover:text-neutral-600 transition-colors"
+            onClick={handleContactClick}
+            className="text-xs font-medium text-black hover:text-neutral-600 transition-colors cursor-pointer"
           >
             Contact
           </a>

@@ -2,29 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-
-const capabilitiesData = [
-  {
-    title: "Minimalist Design",
-    description:
-      "Creating clean, purposeful interfaces that prioritize content and functionality while eliminating unnecessary elements for maximum impact.",
-  },
-  {
-    title: "Accessibility",
-    description:
-      "Ensuring digital experiences are inclusive and usable by everyone, following WCAG guidelines and best practices for all users.",
-  },
-  {
-    title: "UI/UX Interfaces",
-    description:
-      "Designing intuitive and engaging user interfaces with a focus on usability, user journey mapping and delightful interactions.",
-  },
-  {
-    title: "Performance",
-    description:
-      "Optimizing websites and applications for speed and efficiency, ensuring fast loading times and smooth interactions across all devices.",
-  },
-];
+import { capabilitiesData } from "@/data/capabilities";
 
 export function CapabilitiesSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -42,7 +20,7 @@ export function CapabilitiesSection() {
       viewport={{ once: false, margin: "-100px" }}
       transition={{ duration: 0.6 }}
     >
-      <motion.h2 
+      <motion.h2
         className="text-4xl md:text-5xl font-medium text-gray-300 mb-16"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

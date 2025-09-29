@@ -42,19 +42,19 @@ export function Movies() {
 
     const handleMouseDown = (e: MouseEvent) => {
       isDown = true;
-      container.classList.add('active');
+      container.classList.add("active");
       startX = e.pageX - container.offsetLeft;
       scrollLeft = container.scrollLeft;
     };
 
     const handleMouseLeave = () => {
       isDown = false;
-      container.classList.remove('active');
+      container.classList.remove("active");
     };
 
     const handleMouseUp = () => {
       isDown = false;
-      container.classList.remove('active');
+      container.classList.remove("active");
     };
 
     const handleMouseMove = (e: MouseEvent) => {
@@ -66,20 +66,20 @@ export function Movies() {
     };
 
     // Event listeners para scroll com mouse wheel
-    container.addEventListener('wheel', handleWheel, { passive: false });
-    
+    container.addEventListener("wheel", handleWheel, { passive: false });
+
     // Event listeners para drag scroll
-    container.addEventListener('mousedown', handleMouseDown);
-    container.addEventListener('mouseleave', handleMouseLeave);
-    container.addEventListener('mouseup', handleMouseUp);
-    container.addEventListener('mousemove', handleMouseMove);
+    container.addEventListener("mousedown", handleMouseDown);
+    container.addEventListener("mouseleave", handleMouseLeave);
+    container.addEventListener("mouseup", handleMouseUp);
+    container.addEventListener("mousemove", handleMouseMove);
 
     return () => {
-      container.removeEventListener('wheel', handleWheel);
-      container.removeEventListener('mousedown', handleMouseDown);
-      container.removeEventListener('mouseleave', handleMouseLeave);
-      container.removeEventListener('mouseup', handleMouseUp);
-      container.removeEventListener('mousemove', handleMouseMove);
+      container.removeEventListener("wheel", handleWheel);
+      container.removeEventListener("mousedown", handleMouseDown);
+      container.removeEventListener("mouseleave", handleMouseLeave);
+      container.removeEventListener("mouseup", handleMouseUp);
+      container.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
@@ -89,14 +89,14 @@ export function Movies() {
       className="min-h-screen flex flex-col gap-8 px-6 pt-[120px] uppercase w-full"
     >
       <motion.h1
-        className="text-8xl"
+        className="text-2xl text-gray-400"
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.8 }}
       >
-        My Movies
+        Recently Watched
       </motion.h1>
-      
+
       {/* Adicionando um container com altura automática para os filmes */}
       <div className="h-auto overflow-hidden">
         <motion.div
@@ -114,17 +114,19 @@ export function Movies() {
               rel="noopener noreferrer"
               className="block flex-shrink-0 w-[300px] group relative"
               initial={{ opacity: 0, scale: 0.8 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+              animate={
+                isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }
+              }
               transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-              whileHover={{ 
-                y: -5, 
+              whileHover={{
+                y: -5,
                 scale: 1.03,
-                transition: { duration: 0.2 } 
+                transition: { duration: 0.2 },
               }}
-              whileTap={{ 
-                y: -2, 
+              whileTap={{
+                y: -2,
                 scale: 1.01,
-                transition: { duration: 0.1 } 
+                transition: { duration: 0.1 },
               }}
             >
               <div className="relative w-full pb-[133.33%] overflow-hidden">
@@ -136,10 +138,14 @@ export function Movies() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out">
-                  <h3 className="text-white font-medium text-sm truncate">{movie.title}</h3>
+                  <h3 className="text-white font-medium text-sm truncate">
+                    {movie.title}
+                  </h3>
                   <div className="flex justify-between items-center mt-1">
                     <span className="text-white/80 text-xs">{movie.year}</span>
-                    <span className="text-yellow-400 text-xs">{movie.rating}</span>
+                    <span className="text-yellow-400 text-xs">
+                      {movie.rating}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -147,7 +153,7 @@ export function Movies() {
           ))}
         </motion.div>
       </div>
-      
+
       {/* Link para o perfil do Letterboxd */}
       <motion.div
         className="flex justify-center"
@@ -162,7 +168,17 @@ export function Movies() {
           className="inline-flex items-center gap-2 text-neutral-400 hover:text-white transition-colors duration-200"
         >
           View all on Letterboxd
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
             <polyline points="15 3 21 3 21 9"></polyline>
             <line x1="10" y1="14" x2="21" y2="3"></line>

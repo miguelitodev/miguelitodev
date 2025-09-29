@@ -1,2 +1,3 @@
-export { Hero } from './hero';
-export { SocialProfiles } from './social-profiles';
+export { Hero } from "./hero";
+export { Movies } from "./movies";
+export { Playlists } from "./playlists";
