@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     siteName: "Miguel Riquelme",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Miguel Riquelme Portfolio",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title: "Miguel Riquelme - Front-end Developer",
     description:
       "I develop user interfaces and enhance user experiences using web technologies. Since 2020 working with Front-end, I build responsive and efficient web applications while solving real-world user problems.",
-    images: ["/og-image.jpg"],
+    images: ["/og-image.png"],
     creator: "@miguelrq_",
   },
   robots: {
