@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} bg-neutral-100`}>
+      <body className={`${poppins.className} bg-neutral-100 overflow-x-hidden`}>
         <CustomCursor />
         <Header />
         <Suspense fallback={<Loading />}>

@@ -2,22 +2,31 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
+import Image from "next/image";
 import { getLatestMovies } from "@/lib/letterboxd";
 import Link from "next/link";
+import { Movie, MoviesApiResponse } from "@/types";
 
 export function Movies() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, margin: "0px" });
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [movies, setMovies] = useState<any[]>([]);
+  const [movies, setMovies] = useState<Movie[]>([]);
 
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const data = await getLatestMovies();
-        setMovies(data);
+        const data: MoviesApiResponse = await getLatestMovies();
+        // Ensure data.movies exists and is an array before setting state
+        if (data && Array.isArray(data.movies)) {
+          setMovies(data.movies);
+        } else {
+          console.warn("Unexpected data structure from getLatestMovies:", data);
+          setMovies([]);
+        }
       } catch (error) {
         console.error("Failed to fetch movies:", error);
+        setMovies([]);
       }
     };
 
@@ -130,11 +139,12 @@ export function Movies() {
               }}
             >
               <div className="relative w-full pb-[133.33%] overflow-hidden">
-                <img
+                <Image
                   src={movie.poster}
                   alt={movie.title}
+                  fill
                   className="absolute inset-0 w-full h-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105 grayscale group-hover:grayscale-0"
-                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out">

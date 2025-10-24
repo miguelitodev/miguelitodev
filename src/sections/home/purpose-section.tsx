@@ -10,10 +10,10 @@ export function PurposeSection() {
   return (
     <div
       ref={ref}
-      className="h-screen px-6 py-10 flex flex-col justify-center items-start gap-12"
+      className="min-h-screen w-full px-4 sm:px-6 py-10 flex flex-col justify-center items-start gap-8 sm:gap-12"
     >
       <motion.h2
-        className="text-2xl text-neutral-400"
+        className="text-xl sm:text-2xl text-neutral-400"
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.2 }}
@@ -22,7 +22,7 @@ export function PurposeSection() {
       </motion.h2>
 
       <motion.p
-        className="text-5xl leading-tight"
+        className="text-3xl sm:text-4xl md:text-5xl leading-tight max-w-3xl"
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.4 }}
@@ -32,7 +32,7 @@ export function PurposeSection() {
       </motion.p>
 
       <motion.p
-        className="text-5xl leading-tight"
+        className="text-3xl sm:text-4xl md:text-5xl leading-tight max-w-3xl"
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.6 }}
@@ -43,7 +43,7 @@ export function PurposeSection() {
       </motion.p>
 
       <motion.p
-        className="text-5xl leading-tight"
+        className="text-3xl sm:text-4xl md:text-5xl leading-tight max-w-3xl"
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.8 }}

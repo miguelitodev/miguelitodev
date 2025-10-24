@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import {
   professionalSocialMedias,
@@ -38,8 +39,8 @@ export function Hero() {
       >
         About ME
       </motion.h1>
-      <ul className="flex flex-row justify-start gap-32  text-xs leading-tight font-medium h-full">
-        <li className="w-[800px] flex flex-col gap-6 h-full pb-8">
+      <ul className="flex flex-row justify-start gap-32 text-xs leading-tight font-medium h-full flex-wrap lg:flex-nowrap">
+        <li className="w-[800px] flex flex-col gap-6 h-full pb-8 max-lg:w-full">
           <motion.span
             className="font-medium"
             initial={{ opacity: 0, y: 20 }}
@@ -57,7 +58,7 @@ export function Hero() {
             >
               front-end developer
             </motion.span>{" "}
-            born in São Paulo, Brazil in 2002 — so I’m{" "}
+            born in São Paulo, Brazil in 2002 — so I&apos;m{" "}
             <motion.span
               className="text-neutral-400 inline-block"
               initial={{ opacity: 0, scale: 0.8 }}
@@ -68,7 +69,7 @@ export function Hero() {
             >
               {age} years old
             </motion.span>
-            . I’m passionate about turning ideas into{" "}
+            . I&apos;m passionate about turning ideas into{" "}
             <motion.span
               className="text-neutral-400 inline-block"
               initial={{ opacity: 0, scale: 0.8 }}
@@ -267,15 +268,16 @@ export function Hero() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 1.9 }}
           >
-            <img
+            <Image
               src="/img/me-at-montain.jpg"
               alt="Miguel at the mountain"
-              className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 ease-in-out hover:scale-105"
-              style={{ objectFit: "cover" }}
+              fill
+              className="object-cover grayscale hover:grayscale-0 transition-all duration-500 ease-in-out hover:scale-105"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </motion.div>
         </li>
-        <li className="flex flex-col gap-6">
+        <li className="flex flex-col gap-6 lg:min-w-[150px]">
           <motion.span
             className="text-neutral-400"
             initial={{ opacity: 0, y: 20 }}
@@ -410,7 +412,7 @@ export function Hero() {
                 link: "https://developer.mozilla.org/en-US/docs/Web/HTTP",
                 delay: 4.4,
               },
-            ].map((tech, index) => (
+            ].map((tech) => (
               <motion.li
                 key={tech.name}
                 initial={{ opacity: 0, y: 20 }}
@@ -430,6 +432,7 @@ export function Hero() {
               </motion.li>
             ))}
           </ul>
+          <div></div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}

@@ -21,7 +21,7 @@ export function CapabilitiesSection() {
       transition={{ duration: 0.6 }}
     >
       <motion.h2
-        className="text-4xl md:text-5xl font-medium text-gray-300 mb-16"
+        className="text-3xl sm:text-4xl md:text-5xl font-medium text-gray-300 mb-16"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false }}
@@ -53,7 +53,7 @@ export function CapabilitiesSection() {
               }`}
               onClick={() => toggleCapability(index)}
             >
-              <h3 className="text-4xl font-medium">{capability.title}</h3>
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-medium">{capability.title}</h3>
               <div className="ml-4 flex-shrink-0">
                 <div
                   className={`w-6 h-6 flex items-center justify-center ${
@@ -91,6 +91,7 @@ export function CapabilitiesSection() {
             >
               <div className="px-6 pb-6 text-gray-300">
                 <motion.p
+                  className="text-base sm:text-lg"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: openIndex === index ? 1 : 0 }}
                   transition={{ duration: 0 }}

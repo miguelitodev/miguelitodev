@@ -13,7 +13,7 @@ export function Hero() {
       className="h-screen flex flex-col justify-between pl-6 pt-[120px]"
     >
       <motion.h1
-        className="text-6xl leading-tight w-[800px]"
+        className="text-4xl md:text-5xl lg:text-6xl leading-tight max-w-3xl"
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.8, delay: 0.2 }}
@@ -23,7 +23,7 @@ export function Hero() {
       </motion.h1>
 
       <motion.h2
-        className="text-2xl w-[700px] pb-[60px]"
+        className="text-xl md:text-2xl max-w-2xl pb-[60px]"
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.8, delay: 0.5 }}

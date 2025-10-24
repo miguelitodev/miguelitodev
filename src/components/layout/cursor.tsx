@@ -8,6 +8,12 @@ export function CustomCursor() {
   const currentCoordinates = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
+    // Check if the device supports touch events
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    
+    // Don't show custom cursor on touch devices
+    if (isTouchDevice) return;
+
     const cursor = cursorRef.current;
     if (!cursor) return;
 

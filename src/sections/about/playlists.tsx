@@ -2,39 +2,52 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
-import { getUserPlaylists } from "@/lib/spotify";
+import Image from "next/image";
 import Link from "next/link";
+import { getUserPlaylists } from "@/lib/spotify";
+import { SpotifyPlaylist, SpotifyPlaylistsResponse } from "@/types/spotify";
 
 export function Playlists() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, margin: "0px" });
-  const [playlists, setPlaylists] = useState<any[]>([]);
+  const [playlists, setPlaylists] = useState<SpotifyPlaylist[]>([]);
   const [visiblePlaylists, setVisiblePlaylists] = useState(4);
-  const [allPlaylists, setAllPlaylists] = useState<any[]>([]);
+  const [allPlaylists, setAllPlaylists] = useState<SpotifyPlaylist[]>([]);
 
-  // Carregar todas as playlists
   useEffect(() => {
     const fetchPlaylists = async () => {
       try {
-        const data = await getUserPlaylists("22gkbvjxtolpi4mmql22wh5ya", 20, 0);
-        setAllPlaylists(data.items);
-        setPlaylists(data.items.slice(0, 4));
+        const data = await getUserPlaylists(
+          "22gkbvjxtolpi4mmql22wh5ya",
+          20,
+          0
+        );
+        // Ensure data.items exists and is an array before using it
+        if (data && Array.isArray(data.items)) {
+          const playlistsResponse: SpotifyPlaylistsResponse = data;
+          setAllPlaylists(playlistsResponse.items);
+          setPlaylists(playlistsResponse.items.slice(0, 4));
+        } else {
+          console.warn("Unexpected data structure from getUserPlaylists:", data);
+          setAllPlaylists([]);
+          setPlaylists([]);
+        }
       } catch (error) {
         console.error("Failed to fetch Spotify playlists:", error);
+        setAllPlaylists([]);
+        setPlaylists([]);
       }
     };
 
     fetchPlaylists();
   }, []);
 
-  // Função para mostrar mais playlists
   const showMorePlaylists = () => {
     const newVisibleCount = visiblePlaylists + 4;
     setVisiblePlaylists(newVisibleCount);
     setPlaylists(allPlaylists.slice(0, newVisibleCount));
   };
 
-  // Função para mostrar menos playlists
   const showLessPlaylists = () => {
     setVisiblePlaylists(4);
     setPlaylists(allPlaylists.slice(0, 4));
@@ -43,7 +56,7 @@ export function Playlists() {
   return (
     <div
       ref={ref}
-      className="min-h-[80vh] flex flex-col justify-start gap-8 px-6 uppercase w-full"
+      className="min-h-[80vh] flex flex-col justify-start gap-8 px-6 uppercase w-full pt-[120px]"
     >
       <motion.h1
         className="text-2xl text-gray-400"
@@ -69,14 +82,15 @@ export function Playlists() {
           >
             <div className="flex items-center gap-6 group">
               {/* Capa do álbum */}
-              <div className="flex-shrink-0 w-20 h-20 overflow-hidden">
-                <img
+              <div className="flex-shrink-0 w-20 h-20 overflow-hidden relative">
+                <Image
                   src={
                     playlist.images?.[0]?.url || "/img/placeholder-playlist.png"
                   }
                   alt={playlist.name}
-                  className="w-full h-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105 grayscale group-hover:grayscale-0"
-                  loading="lazy"
+                  fill
+                  className="object-cover transition-all duration-300 ease-in-out group-hover:scale-105 grayscale group-hover:grayscale-0"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
 

@@ -1,5 +1,5 @@
-const CLIENT_ID = 'fbd9f551ab954f219d1cb751e9ee910c';
-const CLIENT_SECRET = 'e875203532574b6db787e5d2894bd789';
+const CLIENT_ID = "fbd9f551ab954f219d1cb751e9ee910c";
+const CLIENT_SECRET = "e875203532574b6db787e5d2894bd789";
 
 let accessToken: string | null = null;
 let tokenExpiry: number | null = null;
@@ -13,17 +13,17 @@ async function getAccessToken() {
     return accessToken;
   }
 
-  const url = 'https://accounts.spotify.com/api/token';
+  const url = "https://accounts.spotify.com/api/token";
   const body = new URLSearchParams({
-    grant_type: 'client_credentials',
+    grant_type: "client_credentials",
     client_id: CLIENT_ID,
     client_secret: CLIENT_SECRET,
   });
 
   const response = await fetch(url, {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
+      "Content-Type": "application/x-www-form-urlencoded",
     },
     body: body.toString(),
   });
@@ -41,32 +41,15 @@ async function getAccessToken() {
 }
 
 /**
- * Tenta obter informações do usuário associado ao token (pode falhar se for client credentials)
- */
-async function getMe() {
-  const token = await getAccessToken();
-  
-  const url = 'https://api.spotify.com/v1/audio-me'; // Este endpoint não existe, é um exemplo
-
-  const response = await fetch(url, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
-
-  if (!response.ok) {
-    throw new Error(`Failed to fetch user info: ${response.statusText}`);
-  }
-
-  return await response.json();
-}
-
-/**
  * Busca as playlists públicas de um usuário específico
  */
-export async function getUserPlaylists(userId: string, limit: number = 10, offset: number = 0) {
+export async function getUserPlaylists(
+  userId: string,
+  limit: number = 10,
+  offset: number = 0
+) {
   const token = await getAccessToken();
-  
+
   const url = `https://api.spotify.com/v1/users/${userId}/playlists?limit=${limit}&offset=${offset}`;
 
   const response = await fetch(url, {
