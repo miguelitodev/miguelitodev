@@ -1,1 +1,1 @@
-export { fetchLocationData } from "./useFetchLocation";
+export * from "./fetchMovies";

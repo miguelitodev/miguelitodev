@@ -1,50 +1,178 @@
-# Gemini CLI Guidelines
+# Projeto Portfólio Minimalista v1.0
 
-This document outlines the preferences and expected workflow when interacting with the Gemini CLI in this project.
+Este documento serve como um guia de referência e planejamento para a criação de um portfólio de design e desenvolvimento, inspirado na estética e funcionalidade do site [octaviobrehm.com](https://octaviobrehm.com/).
 
-## General Workflow
+## 1. Filosofia e Conceito
 
-1.  **Understanding and Planning:** Before any significant action, Gemini should seek to fully understand the request and the project context. A concise plan will be presented if the task is complex or involves multiple steps.
-2.  **Verification:** After code modifications, Gemini should always attempt to verify the changes. This includes:
-    *   Running `npm run lint -- --max-warnings 0` to ensure there are no lint warnings.
-    *   Running `npm run build` to check for compilation and linting errors.
-    *   Considering running tests (if applicable and identified).
-3.  **Communication:**
-    *   **Command Explanation:** Before executing commands that modify the file system (`rm`, `git push`, `npm install`, etc.), Gemini should briefly explain what the command does.
-    *   **Confirmation:** For significant or ambiguous actions, Gemini should ask for confirmation.
+O objetivo é criar uma experiência digital que seja mais do que uma simples página, mas sim um espaço que desperte curiosidade e deixe uma marca. O design deve ser guiado por três pilares: **clareza, impacto e deleite**.
 
-## Code Management (Git)
+A abordagem não segue tendências, mas sim princípios. O foco está em interfaces intuitivas e memoráveis que resolvem problemas, fazem sentido e ajudam marcas a se destacarem.
 
-1.  **Branches:**
-    *   For new features (`feat`), Gemini should create a new branch (e.g., `feature/feature-name`).
-    *   For bug fixes (`fix`) or refactors (`refactor`), changes can be applied directly to the current branch, unless requested otherwise.
-2.  **Commits:**
-    *   Always propose a clear, concise commit message focused on the "why" of the change.
-    *   Use the commit pattern `type: message` (e.g., `feat: add movies section to homepage`).
-    *   **All commit messages must be in English.**
-    *   Ensure all relevant files are staged before committing.
-3.  **Push:**
-    *   **NEVER** `git push` to the remote repository without my explicit permission. Always ask, "Would you like to push these changes to the remote repository?".
-    *   After a `git push`, check `git status` to confirm success.
+**Frases de impacto para guiar o tom do projeto:**
 
-## Development Preferences
+- "Criando experiências digitais que despertam curiosidade e deixam uma marca."
+- "Onde criatividade e funcionalidade se encontram para contar histórias únicas."
+- "Designing for clarity, impact, and delight—one project at a time."
 
-*   **Environment Variables:** When adding new environment variables, Gemini should update the `.env.example` file with placeholders and explanatory comments, but never commit sensitive values.
-*   **UI/UX:**
-    *   **Horizontal Scroll:** For horizontal lists that may exceed the screen width, prefer a horizontal scroll with a hidden scrollbar (using `tailwind-scrollbar-hide` or similar).
-    *   **Mouse Wheel Scrolling:** Enable horizontal scrolling with the mouse wheel when hovering over the relevant section.
-    *   **Scroll Behavior:** For horizontal scrollable sections, ensure smooth scrolling behavior and, if applicable, implement mouse wheel scrolling for enhanced user experience.
-    *   **Skeleton Loaders:** Use skeleton loaders to indicate that content is being loaded, especially in sections that depend on asynchronous requests.
-    *   **Style:** Maintain consistency with the existing code style and conventions in the project (fonts, sizes, responsiveness, etc.).
+## 2. Estrutura do Site (Layout de Página Única)
 
-## Additional Configurations and Tools
+O site será estruturado como uma _single-page application_ com navegação baseada em rolagem (scroll).
 
-*   **Unit Tests (Jest):** The project uses Jest for unit tests. New tests should be added for pure functions and data logic, following the `__tests__/` pattern. To run the tests, use `npm test`.
-*   **CI/CD (GitHub Actions):** A CI/CD workflow has been configured in GitHub Actions (`.github/workflows/main.yml`). It runs `lint`, `test`, and `build` on every `push` and `pull_request` to the `master` branch.
-*   **Font Optimization (Next.js `next/font`):** The project's fonts are optimized using Next.js `next/font` for better performance and loading.
-*   **Linter (ESLint):** ESLint is configured to ensure code quality. Currently, the migration to the new ESLint configuration system (flat config) is pending due to a persistent `SyntaxError` in the development environment. `npm run lint` still uses the `.eslintrc.json` configuration.
-*   **Formatter (Prettier) and Lint-Staged:** The integration of Prettier and Lint-Staged has been temporarily reverted due to the ESLint migration issue. It will be re-evaluated after the ESLint problem is resolved.
+1.  **Header Fixo:**
 
----
+    - Logo/Nome no canto superior esquerdo.
+    - Menu de navegação no canto superior direito com âncoras para as seções: `About`, `Projects`, `Capabilities`, `Contact`.
+    - Botão de play/pause para música ambiente (opcional).
 
-This document may be updated as new preferences or workflows are established.
+2.  **Seção Hero:**
+
+    - Uma imagem ou vídeo de fundo impactante e conceitual (ex: a mão tocando o tecido).
+    - Texto de abertura com grande destaque tipográfico: "Touching possibilities, designing the future, transforming vision into experience."
+
+3.  **Seção de Propósito (Purpose/About):**
+
+    - Texto manifesto que detalha a filosofia de trabalho e crenças sobre design.
+    - Layout limpo, com foco total na tipografia e no espaço em branco.
+
+4.  **Seção de Projetos Recentes (Recent Projects):**
+
+    - Grid com 2 ou mais projetos em destaque.
+    - Cada projeto é apresentado com uma imagem ou vídeo de alta qualidade.
+    - Efeito de _hover_ para revelar o nome do projeto.
+    - Link "See more" para uma página de projetos ou para o Behance/Dribbble.
+
+5.  **Seção de Capacidades (Capabilities):**
+
+    - Lista vertical das principais habilidades.
+    - Formato de lista/acordeão, onde cada item pode ou não ser expansível.
+    - Habilidades listadas: `Art Direction`, `UI/UX Design`, `Web Development`, `Brand Identity`.
+
+6.  **Seção de Contato/Encerramento:**
+
+    - Frase de fechamento impactante.
+    - Links diretos para redes sociais (LinkedIn, Behance) e e-mail.
+
+7.  **Elementos Persistentes:**
+    - Badge lateral (como o "W. Nominee") para prêmios ou destaques.
+    - Cursor personalizado que reage a elementos clicáveis.
+
+## 3. Sistema de Design (Design System)
+
+### Paleta de Cores (Tema Claro)
+
+| Uso               | Cor Hex    | Descrição                                                     |
+| ----------------- | ---------- | ------------------------------------------------------------- |
+| Fundo Principal   | `#F8F9FA`  | Um branco-gelo, suave e não cansativo.                        |
+| Texto Principal   | `#121212`  | Preto ou cinza bem escuro para contraste.                     |
+| Texto Secundário  | `#868E96`  | Cinza para subtítulos e textos de apoio.                      |
+| Linhas/Bordas     | `#E9ECEF`  | Divisores de seção muito sutis.                               |
+| Destaque (Accent) | `~#6DD3BF` | Verde-água (ou outra cor vibrante) para o badge e interações. |
+
+### Tipografia
+
+- **Fonte Principal:** Sugestão de uma fonte Sans-serif geométrica e moderna.
+  - **Opções:** `Inter`, `Satoshi`, `General Sans`.
+- **Hierarquia:**
+  - **Títulos (H1, H2):** Peso `Medium` ou `Regular`, tamanho grande (ex: 48px - 72px).
+  - **Títulos de Seção (H3):** Peso `Regular`, espaçamento entre letras aumentado (letter-spacing).
+  - **Corpo de Texto:** Peso `Regular`, tamanho confortável para leitura (ex: 16px - 18px) com altura de linha (line-height) de `1.6`.
+  - **Links/Labels:** Peso `Medium` ou `Semibold`.
+
+## 4. Animações e Interatividade
+
+A fluidez é a chave. As animações devem ser sutis e elegantes.
+
+- **Animações de Rolagem (Scroll):**
+
+  - Elementos de texto e imagem surgem na tela com um efeito suave de _fade-in_ (aparecer) e _slide-in_ (deslizar para a posição).
+  - **Lib Recomendada:** `GSAP (ScrollTrigger)` ou `Framer Motion`.
+
+- **Efeitos de Hover:**
+
+  - **Links:** Mudança de cor suave ou sublinhado animado.
+  - **Projetos:** Leve aumento de escala (`transform: scale(1.02)`) e/ou sobreposição de cor sutil na imagem.
+  - **Itens de Capacidades:** Mudança de cor no ícone ou no texto.
+  - **Técnica:** Utilizar `CSS Transitions` para suavizar todas as mudanças de estado.
+
+- **Cursor:**
+  - O cursor padrão é ocultado (`cursor: none`).
+  - Uma `div` customizada segue o mouse via JavaScript.
+  - O estilo do cursor muda ao passar sobre links e imagens (ex: aumenta de tamanho, mostra um ícone de "ver").
+
+## 5. Sugestão de Tech Stack
+
+- **Frontend:**
+  - **React (com Next.js):** Para performance, SEO e renderização otimizada.
+  - **Vue (com Nuxt.js):** Alternativa robusta com ótima experiência de desenvolvimento.
+- **Animações:**
+  - **GSAP (GreenSock):** Padrão da indústria para animações complexas e de alta performance.
+  - **Framer Motion:** Excelente para quem usa React, com uma API mais declarativa.
+- **Estilização:**
+  - **Styled Components** ou **Emotion:** Para CSS-in-JS.
+  - **Tailwind CSS:** Para uma abordagem utility-first, ótima para prototipagem rápida e consistência.
+  - **CSS Modules:** Para escopo local de CSS sem bibliotecas adicionais.
+- **Deployment:**
+  - **Vercel:** Integração perfeita com Next.js.
+  - **Netlify:** Ótima opção para projetos estáticos e Jamstack.
+
+## Implementações Específicas do Projeto
+
+### Seção de Playlists do Spotify
+- Exibe playlists do usuário do Spotify com capa, nome e número de faixas
+- Efeito de hover com inversão de cores (fundo preto, texto branco)
+- Capas das playlists em preto e branco por padrão, volta a cor no hover
+- Botão para expandir/recolher mais playlists
+- Link para o perfil completo no Spotify
+
+### Seção de Filmes do Letterboxd
+- Exibe os últimos filmes assistidos do usuário no Letterboxd
+- Layout horizontal com scroll
+- Capas dos filmes em preto e branco por padrão, volta a cor no hover
+- Efeito de hover com sobreposição de informações (título, ano, avaliação)
+- Link para o perfil completo no Letterboxd
+
+### Efeitos Visuais
+- Filtros preto e branco em todas as imagens de mídia (playlists e filmes)
+- Transições suaves de 300ms para todos os efeitos de hover
+- Efeitos de scale nas imagens ao passar o mouse
+- Inversão de cores em elementos interativos ao passar o mouse
+
+## Animação de Arte ASCII
+
+O projeto utiliza um componente reutilizável `AsciiArt` para exibir animações de arte ASCII a partir de arquivos JSON.
+
+### Componente `AsciiArt`
+
+- **Localização:** `src/components/capabilities/AsciiArt.tsx`
+- **Props:**
+  - `frames`: Um array de strings, onde cada string é um quadro da animação.
+- **Funcionalidade:**
+  - O componente percorre o array `frames` em um intervalo de 100ms, criando um efeito de animação.
+  - O texto da arte ASCII é preto com fundo transparente.
+
+### Como Usar
+
+1.  **Importe o componente e o arquivo JSON:**
+
+    ```jsx
+    import { AsciiArt } from "@/components/capabilities/AsciiArt";
+    import myAsciiFrames from "./my-ascii-frames.json";
+    ```
+
+2.  **Renderize o componente, passando os quadros como props:**
+
+    ```jsx
+    <AsciiArt frames={myAsciiFrames} />
+    ```
+
+## Gemini Added Memories
+- O usuário deseja que comandos e padrões importantes sejam registrados no arquivo GEMINI.md.
+- Implementações importantes no portfólio:
+1. Seção de playlists do Spotify com efeito de hover de inversão de cores (fundo preto, texto branco)
+2. Filtro preto e branco nas capas das playlists que volta a cor no hover
+3. Botão para expandir/recolher mais playlists
+4. Seção de filmes do Letterboxd com layout horizontal e scroll
+5. Filtro preto e branco nas capas dos filmes que volta a cor no hover
+6. Efeitos de hover com sobreposição de informações nos filmes
+7. Transições suaves de 300ms em todos os efeitos
+8. Efeitos de scale nas imagens ao passar o mouse
