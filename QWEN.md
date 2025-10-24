@@ -148,3 +148,5 @@ A fluidez é a chave. As animações devem ser sutis e elegantes.
 6. Efeitos de hover com sobreposição de informações nos filmes
 7. Transições suaves de 300ms em todos os efeitos
 8. Efeitos de scale nas imagens ao passar o mouse
+9. Melhorias de SEO com metadados completos, incluindo title, description, openGraph, twitter cards, e outras tags essenciais
+10. Criação de sitemap e robots.txt dinâmicos para melhor indexação por motores de busca

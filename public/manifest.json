@@ -1,0 +1,21 @@
+{
+  "name": "Miguel Riquelme - Creative Developer & Designer",
+  "short_name": "Miguel Riquelme",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F8F9FA",
+  "theme_color": "#000",
+  "description": "I develop user interfaces and enhance user experiences using web technologies. Since 2020 working with Front-end, I build responsive and efficient web applications while solving real-world user problems.",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ]
+}

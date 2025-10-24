@@ -22,7 +22,7 @@ export function PurposeSection() {
       </motion.h2>
 
       <motion.p
-        className="text-3xl sm:text-4xl md:text-5xl leading-tight max-w-3xl"
+        className="text-3xl sm:text-4xl md:text-5xl leading-tight w-full"
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.4 }}
@@ -32,7 +32,7 @@ export function PurposeSection() {
       </motion.p>
 
       <motion.p
-        className="text-3xl sm:text-4xl md:text-5xl leading-tight max-w-3xl"
+        className="text-3xl sm:text-4xl md:text-5xl leading-tight w-full"
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.6 }}
@@ -43,7 +43,7 @@ export function PurposeSection() {
       </motion.p>
 
       <motion.p
-        className="text-3xl sm:text-4xl md:text-5xl leading-tight max-w-3xl"
+        className="text-3xl sm:text-4xl md:text-5xl leading-tight w-full"
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.8 }}
